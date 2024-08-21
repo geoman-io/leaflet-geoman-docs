@@ -16,7 +16,7 @@ const config: Config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'geoman-io', // Usually your GitHub org/user name.
-  projectName: 'geoman-docs', // Usually your repo name.
+  projectName: 'leaflet-geoman-docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -47,7 +47,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/geoman-io/geoman-docs/tree/master/',
+            'https://github.com/geoman-io/leaflet-geoman-docs/tree/master/',
         },
         blog: false,
         theme: {
