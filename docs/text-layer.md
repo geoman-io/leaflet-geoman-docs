@@ -11,7 +11,7 @@ Additional to the default methods and options there are a few more possibilities
 #### Text Layer Drawing:
 
 ```js
-map.pm.enableDraw("Text", { textOptions: { text: "Geoman is fantastic! 🚀" } });
+map.pm.enableDraw("Text", { textOptions: { text: "Geoman is fantastic! 🚀", textMarkerCentered: true } });
 ```
 
 See the available options for `textOptions` in the table below.
@@ -22,6 +22,7 @@ See the available options for `textOptions` in the table below.
 | focusAfterDraw | `true`  | Directly after placing the marker, text editing is activated. |
 | removeIfEmpty  | `true`  | The text layer is removed if no text is written.              |
 | className      | ``      | Custom CSS Classes. Separated by a space.                     |
+| textMarkerCentered| `true`  | Centers the text around the marker.                                      |
 
 #### Text Layer Editing:
 
@@ -33,7 +34,7 @@ The following methods are available on `layer.pm`:
 | blur()          | -             | Deactivate text editing. Layer needs first to be enabled `.enable()`. |
 | hasFocus()      | `Boolean`     | Is text editing active.                                               |
 | getElement()    | `HTMLElement` | Returns the `<textarea>` DOM element.                                 |
-| setText(`text`) | -             | Set text.                                                             |
+| setText(`text`) | -             | Set text. Can also be used to update styling.                                                            |
 | getText()       | `String`      | Returns the text.                                                     |
 
 The following events are available on a layer instance:
@@ -59,4 +60,13 @@ L.marker(latlng, {
   textMarker: true,
   text: "Manual creation is no problem for Geoman!",
 }).addTo(map);
+```
+
+
+#### Setting global text options
+
+The text options can be set globally to be used by all methods created by the draw method:
+
+```js
+map.pm.setGlobalOptions({ textOptions: { textMarkerCentered: true, removeIfEmpty: false } });
 ```
