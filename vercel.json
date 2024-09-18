@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/docs/leaflet/:path*",
+      "destination": "/:path*"
+    }
+  ]
+}
