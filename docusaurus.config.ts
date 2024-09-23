@@ -67,17 +67,22 @@ const config: Config = {
       },
       items: [
         {
+          href: 'https://geoman.io/docs/maplibre',
+          label: 'MapLibre Docs',
+          position: 'right',
+        },
+        {
           href: 'https://geoman.io/blog',
           label: 'Blog',
           position: 'right',
         },
         {
-          href: 'https://geoman.io/#pricing',
+          href: 'https://geoman.io/pricing',
           label: 'Pricing',
           position: 'right',
         },
         {
-          href: 'https://geoman.io/demo',
+          href: 'https://geoman.io/demo/leaflet',
           label: 'Demo',
           position: 'right',
         },
