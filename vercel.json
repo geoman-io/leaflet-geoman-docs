@@ -1,5 +1,16 @@
 {
+  "redirects": [
+    {
+      "source": "/docs/leaflet/",
+      "destination": "/docs/leaflet",
+      "permanent": true
+    }
+  ],
   "rewrites": [
+    {
+      "source": "/docs/leaflet",
+      "destination": "/"
+    },
     {
       "source": "/docs/leaflet/:path*",
       "destination": "/:path*"

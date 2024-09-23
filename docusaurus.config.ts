@@ -12,7 +12,7 @@ const config: Config = {
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/docs/leaflet',
-
+  trailingSlash: false,
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'geoman-io', // Usually your GitHub org/user name.
@@ -29,13 +29,6 @@ const config: Config = {
     locales: ['en'],
   },
   scripts: [
-    {
-      src: 'https://plausible.io/js/script.js',
-      'data-domain': 'geoman.io',
-      type: 'text/javascript',
-      defer: true,
-      async: true,
-    },
     {
       src: 'https://umami.parap.ly/script.js',
       'data-website-id': 'bc78fba3-4928-4efa-9923-03048345048e',
