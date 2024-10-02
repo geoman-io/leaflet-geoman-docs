@@ -1,0 +1,146 @@
+---
+title: Geofencing ⭐
+---
+
+## Geofencing ⭐
+
+![Geofencing Feature](https://geoman-static.onrender.com/assets/geofence-containment.gif)
+
+Geofencing in Leaflet-Geoman allows you to prevent layers from intersecting or ensure layers are contained within specific areas. This feature enables more precise and controlled drawing and editing of shapes on your map.
+
+## Global Options
+
+You can enable Collision Detection globally on a map like this:
+
+```js
+map.pm.setGlobalOptions({
+  preventIntersection: [layer1, layer2],
+  requireContainment: [layer3, layer4]
+});
+```
+
+| Option              | Description                                                           |
+| :------------------ | :-------------------------------------------------------------------- |
+| preventIntersection | An array of layers that new or edited layers should not intersect with |
+| requireContainment  | An array of layers that new or edited layers must be contained within  |
+
+## Methods
+
+The following methods are available on `map.pm`:
+
+| Method                                     | Returns   | Description                                             |
+| :----------------------------------------- | :-------- | :------------------------------------------------------ |
+| setGlobalOptions(options)                  | -         | Sets global options including collision detection rules |
+| getGlobalOptions()                         | `Object`  | Returns the current global options                      |
+
+## Events
+
+The following events are available on layers during draw or edit:
+
+| Event                     | Description                                           |
+| :------------------------ | :---------------------------------------------------- |
+| pm:intersectionviolation  | Fired when a layer intersects with a restricted layer |
+| pm:containmentviolation   | Fired when a layer is not contained as required       |
+
+## Supported Layer Types
+
+Collision Detection works with various layer types including:
+
+- Marker
+- CircleMarker
+- Circle
+- Line
+- Polygon
+- Rectangle
+- Text
+- ImageOverlay
+
+## Features
+
+1. **Draw Mode**: Prevents drawing shapes that violate collision rules.
+2. **Edit Mode**: Prevents edits that would cause violations.
+3. **Drag Mode**: Restricts dragging layers to valid areas.
+4. **Rotation**: Ensures rotated shapes don't violate rules.
+5. **Scaling**: Prevents scaling that would cause intersections or containment violations.
+6. **Freehand Drawing**: Applies collision rules to freehand-drawn shapes.
+7. **Copy Layer**: Ensures copied layers adhere to collision rules when placed.
+
+## Visual Feedback
+
+When a collision or containment violation occurs:
+
+- The shape being drawn or edited will turn red (`#f00000ff`).
+- The shape will revert to its original position or shape if the action is completed while in violation.
+
+## Notes
+
+- Collision detection is not applied to layers with `snapIgnore: true`.
+- Removed layers are automatically ignored in collision detection.
+- Null values in `preventIntersection` or `requireContainment` arrays are ignored.
+- For CircleMarkers, only the center point is checked for collisions when resizing.
+- Text layers are only checked for their anchor point in collision detection.
+- `preventIntersection` and `requireContainment` can be used together or separately, depending on your requirements.
+- Only `L.Polygon` and `L.Circle` layers can be used as arguments in `requireContainment` and `preventIntersection`.
+
+
+## Example Usage
+
+```js
+// Enable collision detection
+map.pm.setGlobalOptions({
+  preventIntersection: [existingPolygon],
+  requireContainment: [boundaryPolygon]
+});
+
+// Listen for violation events
+map.on('pm:drawstart', ({ workingLayer }) => {
+  workingLayer.on('pm:intersectionviolation', (e) => {
+    console.log('Intersection violation detected');
+  });
+  workingLayer.on('pm:containmentviolation', (e) => {
+    console.log('Containment violation detected');
+  });
+});
+
+// Draw a new shape
+map.pm.enableDraw('Polygon');
+```
+
+This feature ensures that your drawn and edited shapes comply with spatial constraints, improving the accuracy and consistency of your map data.
+
+## Demo
+
+import Geofencing from '@site/src/components/examples/Geofencing';
+
+Below are two examples demonstrating how to enforce shape restrictions using the Geoman library.
+
+#### Containment Enforcement: 
+New shapes must be fully contained within a defined boundary.
+
+The code below configures the map to ensure any newly drawn shapes are restricted within the boundaryPolygon.
+
+```
+map.pm.setGlobalOptions({
+  requireContainment: [boundaryPolygon]
+});
+```
+In this demo, the requireContainment option is enabled:
+
+<Geofencing requireContainment={true}/>
+
+Here we have an existing polygon that new shapes must not intersect with
+
+#### Intersection Prevention:
+
+New shapes must not overlap with an existing polygon.
+
+The code below ensures new shapes will not intersect with the existingPolygon.
+```
+map.pm.setGlobalOptions({
+  preventIntersection: [existingPolygon]
+});
+```
+
+In this demo, the preventIntersection option is enabled:
+
+<Geofencing preventIntersection={true}/>

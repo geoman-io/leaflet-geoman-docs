@@ -2,9 +2,9 @@
 title: Line Simplification Mode ⭐
 ---
 
-### Line Simplification Mode ⭐
+## Line Simplification Mode ⭐
 
-![Line Simplification Feature](https://geoman-static.onrender.com/assets/copy.gif)
+![Line Simplification Feature](https://geoman-static.onrender.com/assets/linesimplification-polygons.gif)
 
 You can enable Line Simplification Mode for all layers on a map like this:
 
@@ -32,15 +32,16 @@ The following events are available on a map instance:
 | pm:linesimplification                  | `e`    | Fired when a new layer is created by copying an existing layer.  | `sourceLayer`, `newLayer`, `shape`                         |
 
 
-#### Line Simplification Mode Button in the Toolbar
+### Line Simplification Mode Button in the Toolbar
 
-You can also enable/disable a button in the toolbar to toggle Line Simplification mode. You can enable (disable) it by setting `copyLayerMode` to `true` (`false`) in the `addControls` options.
+You can also enable/disable a button in the toolbar to toggle Line Simplification mode. You can enable (disable) it by setting `lineSimplificationMode` to `true` (`false`) in the `addControls` options.
 
 ```javascript
 map.pm.addControls({ 
-  copyLayerMode: true, 
+  lineSimplificationMode: true, 
 });
 ```
+## Examples
 
 import LineSimplification from '@site/src/components/examples/LineSimplification';
 

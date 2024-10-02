@@ -1,0 +1,133 @@
+---
+title: Lasso Select Mode ⭐
+---
+
+## Lasso Select Mode ⭐
+
+![Lasso Select Feature](https://geoman-static.onrender.com/assets/lasso-select.gif)
+
+Lasso Select Mode allows you to select multiple layers on your map by drawing a freehand shape around them. This feature enables quick and intuitive selection of layers for further manipulation or analysis.
+
+You can enable Lasso Select Mode on a map like this:
+
+```js
+// enable Lasso Select Mode
+map.pm.enableGlobalLassoMode();
+
+// disable Lasso Select Mode
+map.pm.disableGlobalLassoMode();
+```
+
+The following methods are available on `map.pm`:
+
+| Method                             | Returns   | Description                                                            |
+| :--------------------------------- | :-------- | :--------------------------------------------------------------------- |
+| enableGlobalLassoMode(options)     | -         | Enables global Lasso Select Mode with optional configuration.          |
+| disableGlobalLassoMode()           | -         | Disables global Lasso Select Mode.                                     |
+| toggleGlobalLassoMode()            | -         | Toggles global Lasso Select Mode.                                      |
+| globalLassoModeEnabled()           | `Boolean` | Returns `true` if global Lasso Select Mode is enabled, `false` if not. |
+| setLassoMode(mode)                 | -         | Sets the Lasso mode (APPEND, SUBTRACT, or RESET).                      |
+| getLassoMode()                     | `String`  | Returns the current Lasso mode.                                        |
+| setLassoSelectMode(mode)           | -         | Sets the Lasso select mode (CONTAIN or INTERSECT).                     |
+| getLassoSelectMode()               | `String`  | Returns the current Lasso select mode.                                 |
+
+## Lasso Select Options
+
+When enabling Lasso Select Mode, you can pass options to configure its behavior:
+
+```js
+map.pm.enableGlobalLassoMode({
+  mode: map.pm.Draw.Lasso.APPEND_MODE,
+  selectMode: map.pm.Draw.Lasso.INTERSECT_SELECT_MODE,
+  color: 'red',
+});
+```
+
+Available options include:
+
+| Option     | Values                                            | Description                                           |
+| :--------- | :------------------------------------------------ | :---------------------------------------------------- |
+| mode       | APPEND_MODE, SUBTRACT_MODE, RESET_MODE            | Determines how selections are handled.                |
+| selectMode | CONTAIN_SELECT_MODE, INTERSECT_SELECT_MODE        | Determines how layers are selected.                   |
+| color      | Any valid color value                             | Sets the color of the lasso line while drawing.       |
+
+## Lasso Modes
+
+Lasso Select Mode has three main modes that determine how selections are handled:
+
+1. APPEND_MODE: Adds new selections to existing ones.
+2. SUBTRACT_MODE: Removes selections from existing ones.
+3. RESET_MODE: Clears existing selections before making new ones.
+
+You can set these modes using the `setLassoMode()` method or when enabling the mode:
+
+```js
+map.pm.setLassoAppendMode();
+map.pm.setLassoSubtractMode();
+map.pm.setLassoResetMode();
+```
+
+## Select Modes
+
+There are two select modes that determine how layers are selected:
+
+1. CONTAIN_SELECT_MODE: Selects only layers fully contained within the lasso.
+2. INTERSECT_SELECT_MODE: Selects layers that intersect with the lasso.
+
+Set these modes using the `setLassoSelectMode()` method or when enabling the mode:
+
+```js
+map.pm.setLassoContainSelectMode();
+map.pm.setLassoIntersectSelectMode();
+```
+
+## Events
+
+The following events are available on a map instance:
+
+| Event                              | Params | Description                                     | Output                    |
+| :--------------------------------- | :----- | :---------------------------------------------- | :------------------------ |
+| pm:globallassomodetoggled          | `e`    | Fired when Lasso Select Mode is toggled.        | `enabled`, `map`          |
+| pm:lassofinish                     | `e`    | Fired when a lasso selection is completed.      | `layers`, `selection`     |
+
+## Example Usage
+
+```js
+// Enable Lasso Select Mode with APPEND mode and INTERSECT select mode
+map.pm.enableGlobalLassoMode({
+  mode: map.pm.Draw.Lasso.APPEND_MODE,
+  selectMode: map.pm.Draw.Lasso.INTERSECT_SELECT_MODE,
+});
+
+// Listen for selection changes
+map.on('pm:lassofinish', (e) => {
+  console.log('Selected layers:', e.layers);
+  console.log('Current selection:', e.selection);
+});
+
+// Get currently selected layers
+const selectedLayers = map.pm.getSelectedLayers();
+
+// Clear all selections
+map.pm.Draw.Lasso.cleanupSelection();
+```
+
+## Lasso Select Mode Button in the Toolbar
+
+You can enable/disable a button in the toolbar to toggle Lasso Select Mode. Enable it by setting `lassoMode` to `true` in the `addControls` options:
+
+```javascript
+map.pm.addControls({ 
+  lassoMode: true, 
+});
+```
+
+## Notes
+
+- Layers can be excluded from lasso selection by setting the `lassoSelectable` option to `false` on the layer's pm options.
+- Holding the Ctrl key while using Lasso Select Mode in RESET mode will temporarily switch to APPEND mode, allowing for non-contiguous selections.
+- Lasso Select Mode works with various layer types including markers, circles, polygons, polylines, and rectangles.
+
+import LassoSelect from '@site/src/components/examples/LassoSelect';
+
+<LassoSelect />

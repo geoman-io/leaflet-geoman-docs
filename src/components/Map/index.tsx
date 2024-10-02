@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+import '@geoman-io/leaflet-geoman-pro/dist/leaflet-geoman.css';
 import L from 'leaflet';
 import "@geoman-io/leaflet-geoman-pro";
 import { ExpGeomanControl, ExpGeomanControlProps } from './ExpGeomanControl'; // Make sure ExpGeomanControl accepts props
