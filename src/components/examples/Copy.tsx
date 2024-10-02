@@ -141,11 +141,13 @@ const Example: React.FC = () => {
   return (
     <BrowserOnly fallback={<div>Loading...</div>}>
     {() => {
-      //const LibComponent = require('some-lib').LibComponent;
-      return <Map geomanControlOptions={geomanControlOptions} />;
+      const LibComponent =
+        require('@site/src/components/Map').default;
+      return     <LibComponent
+      geomanControlOptions={geomanControlOptions}
+    />
     }}
   </BrowserOnly>
-      
   );
 };
 
