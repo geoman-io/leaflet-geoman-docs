@@ -2,7 +2,11 @@
 title: Draw Mode
 ---
 
-### Draw Mode
+## Draw Mode
+
+import Draw from '@site/src/components/examples/Draw';
+
+<Draw />
 
 Use Draw Mode on a map like this:
 
@@ -36,6 +40,8 @@ The following methods are available on `map.pm`:
 | getGeomanDrawLayers(`Boolean`)               | `Array`   | Returns all drawn Leaflet-Geoman layers on the map as array. Pass `true` to get a L.FeatureGroup.                                                                                                                        |
 | Draw.`shape`.setOptions(`options`)           | -         | Applies the options to the drawing shape and calls `setStyle`. `map.pm.Draw.Line.setOptions(options)`.                                                                                                                   |
 | Draw.`shape`.setStyle(`options`)             | -         | Applies the styles (`templineStyle`, `hintlineStyle`, `pathOptions`, `markerStyle`) to the drawing layer. `map.pm.Draw.Line.setStyle(options)`.                                                                          |
+
+## Draw Options
 
 See the available options in the table below.
 
@@ -125,3 +131,7 @@ L.geoJSON(data, {
   snapIgnore: true,
 });
 ```
+
+## Example
+
+<Draw />

@@ -1,0 +1,47 @@
+---
+title: Line Simplification Mode ⭐
+---
+
+### Line Simplification Mode ⭐
+
+![Line Simplification Feature](https://geoman-static.onrender.com/assets/copy.gif)
+
+You can enable Line Simplification Mode for all layers on a map like this:
+
+```js
+map.pm.enableGlobalLineSimplificationMode();
+```
+
+Leaflet-Geoman's Line Simplification Mode enables easy and efficient simplification of line and polygon geometry. Users select a layer, click the starting vertex to begin, and preview the points that will be removed. After clicking the ending vertex, the layer is updated with the simplified geometry.
+
+
+The following methods are available on `map.pm`:
+
+| Method                   | Returns   | Description                                                            |
+| :----------------------- | :-------- | :--------------------------------------------------------------------- |
+| enableGlobalLineSimplificationMode()  | -         | Enables global Line Simplification Mode.                                             |
+| disableGlobalLineSimplificationMode() | -         | Disables global Line Simplification Mode.                                            |
+| toggleGlobalLineSimplificationMode()  | -         | Toggles global Line Simplification Mode.                                             |
+| globalLineSimplificationModeEnabled() | `Boolean` | Returns `true` if global Line Simplification Mode is enabled. `false` when disabled. |
+
+The following events are available on a map instance:
+
+| Event                     | Params | Description                               | Output                                                 |
+| :------------------------ | :----- | :---------------------------------------- | :----------------------------------------------------- |
+| pm:globallinesimplificationmodetoggled | `e`    | Fired when Line Simplification Mode is toggled.         | `enabled`, `map`                                       |
+| pm:linesimplification                  | `e`    | Fired when a new layer is created by copying an existing layer.  | `sourceLayer`, `newLayer`, `shape`                         |
+
+
+#### Line Simplification Mode Button in the Toolbar
+
+You can also enable/disable a button in the toolbar to toggle Line Simplification mode. You can enable (disable) it by setting `copyLayerMode` to `true` (`false`) in the `addControls` options.
+
+```javascript
+map.pm.addControls({ 
+  copyLayerMode: true, 
+});
+```
+
+import LineSimplification from '@site/src/components/examples/LineSimplification';
+
+<LineSimplification />

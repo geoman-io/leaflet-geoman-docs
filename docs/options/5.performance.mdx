@@ -20,3 +20,30 @@ See the available options in the table below.
 All options can be used together. In fact, the performance increases even more when using multiple options together, depending on your desired user experience.
 
 They are part of the options for Edit Mode. [See usage and full options table there](/docs/modes/edit-mode).
+
+## Examples
+
+import Performance from '@site/src/components/examples/Performance';
+
+Performance improvements enabled with `limitMarkersToCount: 10`
+<Performance limitMarkersToCount={10}/>
+
+Performance improvements enabled with `limitMarkersToViewPort: true`
+<Performance limitMarkersToViewPort={true}/>
+
+Performance improvements enabled with `limitMarkersToClick: true`
+<Performance limitMarkersToClick={true}/>
+
+Performance improvements enabled with `limitMarkersToZoom: 15` (zoom starts at lvl 14, zoom in to see the effect)
+<Performance limitMarkersToZoom={15}/>
+
+Performance improvements enabled with all features:  
+```
+{
+  limitMarkersToClick: true, 
+  limitMarkersToViewPort: true,
+  limitMarkersToCount: 10,
+  limitMarkersToZoom: 15
+}
+```
+<Performance limitMarkersToZoom={15} limitMarkersToClick={true} limitMarkersToViewPort={true} limitMarkersToCount={10}/>

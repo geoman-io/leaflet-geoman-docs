@@ -2,7 +2,7 @@
 title: Edit Mode
 ---
 
-### Edit Mode
+## Edit Mode
 
 You can enable Edit Mode for all layers on a map like this:
 
@@ -43,7 +43,7 @@ The following methods are available for layers under `layer.pm`:
 | setOptions(`options`) | -         | Set the options on the layer.                                                                                              |
 | getOptions()          | `Object`  | Returns the options of the layer.                                                                                          |
 
-#### Edit Mode Options
+### Edit Mode Options
 
 See the available options in the table below.
 
@@ -122,3 +122,9 @@ map.on("pm:globaleditmodetoggled", (e) => {
   console.log(e);
 });
 ```
+
+## Example
+
+import Edit from '@site/src/components/examples/Edit';
+
+<Edit />

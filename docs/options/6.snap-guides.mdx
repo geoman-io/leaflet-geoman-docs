@@ -42,3 +42,20 @@ map.pm.addControls({
   snapGuidesOption: true, 
 });
 ```
+
+## Examples
+
+import SnapGuides from '@site/src/components/examples/SnapGuides';
+
+SnapGuides enabled with default angles of `snapGuidesAngles={[90]}`:
+<SnapGuides />
+
+
+SnapGuides enabled with default angles of `snapGuidesAngles={[45,60,90]}`:
+<SnapGuides angles={[60]}/>
+
+SnapGuides enabled with default angles of `snapGuidesAngles={[45,60,90]}`:
+<SnapGuides angles={[45,60,90]}/>
+
+SnapGuides enabled with default angles of `snapGuidesAngles={[15,30,45,60,75,90]}`:
+<SnapGuides angles={[15,30,45,60,75,90]}/>
