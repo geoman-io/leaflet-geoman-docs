@@ -2,6 +2,55 @@
 title: Leaflet-Geoman Pro ⭐
 ---
 
+## v2.13.0
+
+### Features
+October 2024
+
+#### 1. Line Simplification Mode
+![Line Simplification Feature](https://geoman-static.onrender.com/assets/linesimplification-polygons.gif)
+
+- Enables easy simplification of line and polygon geometry
+- Global enable/disable methods added
+- New toolbar button for quick access
+
+#### 2. Copy Layer Mode
+- Allows creation of copies of existing layers (points, lines, polygons)
+- Global enable/disable methods implemented
+- New toolbar button for easy activation
+
+#### 3. Custom Shapes Mode
+![Custom Shapes Feature](https://geoman-static.onrender.com/assets/custom-shapes.gif)
+
+- Enables drawing of predefined custom shapes
+- Add/remove custom shapes to internal library
+- Add custom shapes to toolbar for quick access
+- Supports GeoJSON input and styling options
+
+#### 4. Freehand Drawing Mode
+- Enables intuitive freehand drawing of polygons or lines
+- Configurable options for fill and styling
+- Integrated into the toolbar with polygon/line switching
+
+#### 5. Lasso Select Mode
+![Lasso Select Feature](https://geoman-static.onrender.com/assets/lasso-intersect.gif)
+- Allows selection of multiple layers by drawing a freehand shape
+- Multiple selection modes: append, subtract, reset
+- Configurable options for selection behavior and styling
+
+#### 6. Geofencing
+![Geofencing Feature](https://geoman-static.onrender.com/assets/geofence-containment.gif)
+
+- Introduced advanced geofencing capabilities to prevent layer intersections and ensure containment
+- Added global options for `preventIntersection` and `requireContainment`
+- Implemented collision detection for various layer types including Marker, CircleMarker, Circle, Line, Polygon, Rectangle, Text, and ImageOverlay
+- Applied geofencing rules to Draw Mode, Edit Mode, Drag Mode, Rotation, Scaling, Freehand Drawing, and Copy Layer operations
+- Introduced visual feedback (red highlighting) for collision or containment violations
+- Added new events: `pm:intersectionviolation` and `pm:containmentviolation` for violation detection
+- Enabled fine-grained control over spatial constraints, improving map data accuracy and consistency
+
+These new features significantly enhance Leaflet-Geoman's capabilities for map editing and interaction, providing users with more advanced tools for manipulating and creating geographical data.
+
 ## v2.12.0: Added Union and Difference Modes
 
 - Add [Union feature](/modes/9.union-mode) that merges two layers into one
