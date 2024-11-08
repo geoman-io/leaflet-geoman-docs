@@ -4,7 +4,7 @@ title: "Toolbar"
 ---
 ### Leaflet-Geoman Toolbar
 
-<img align="right" style={{paddingLeft: "10px", marginLeft: "20px", height: "300px"}} src="https://geoman-static.onrender.com/assets/toolbar.png" alt="Leaflet-Geoman Toolbar"/>
+<img align="right" style={{paddingLeft: "10px", marginLeft: "20px", height: "300px"}} src="https://assets.geoman.io//assets/toolbar.png" alt="Leaflet-Geoman Toolbar"/>
   
 You can add a toolbar to the map to use Leaflet-Geoman features via a user interface.  
 <div style={{paddingRight: "10px", marginRight: "20px", height: "300px"}}>

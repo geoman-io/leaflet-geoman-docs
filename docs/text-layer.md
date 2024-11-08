@@ -4,7 +4,7 @@ title: "Text Layer"
 ---
 ### Text Layer
 
-![text-layer](https://geoman-static.onrender.com/assets/text-layer.gif)
+![text-layer](https://assets.geoman.io//assets/text-layer.gif)
 
 Additional to the default methods and options there are a few more possibilities for Text Layers:
 

@@ -190,7 +190,7 @@ Huge thanks to @SuperPat45, @ByMykel, @Falke-Design, @TurtIeSocks, @drzhbe, @wvd
 ### Minor Changes 
 
 - Add Text Layer: #1120
-![textlayer](https://geoman-static.onrender.com/assets/text-layer.gif)
+![textlayer](https://assets.geoman.io//assets/text-layer.gif)
 
 
 ### Patches 

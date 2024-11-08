@@ -8,7 +8,7 @@ title: Leaflet-Geoman Pro ⭐
 October 2024
 
 #### 1. Line Simplification Mode
-![Line Simplification Feature](https://geoman-static.onrender.com/assets/linesimplification-polygons.gif)
+![Line Simplification Feature](https://assets.geoman.io//assets/linesimplification-polygons.gif)
 
 - Enables easy simplification of line and polygon geometry
 - Global enable/disable methods added
@@ -20,7 +20,7 @@ October 2024
 - New toolbar button for easy activation
 
 #### 3. Custom Shapes Mode
-![Custom Shapes Feature](https://geoman-static.onrender.com/assets/custom-shapes.gif)
+![Custom Shapes Feature](https://assets.geoman.io//assets/custom-shapes.gif)
 
 - Enables drawing of predefined custom shapes
 - Add/remove custom shapes to internal library
@@ -33,13 +33,13 @@ October 2024
 - Integrated into the toolbar with polygon/line switching
 
 #### 5. Lasso Select Mode
-![Lasso Select Feature](https://geoman-static.onrender.com/assets/lasso-intersect.gif)
+![Lasso Select Feature](https://assets.geoman.io//assets/lasso-intersect.gif)
 - Allows selection of multiple layers by drawing a freehand shape
 - Multiple selection modes: append, subtract, reset
 - Configurable options for selection behavior and styling
 
 #### 6. Geofencing
-![Geofencing Feature](https://geoman-static.onrender.com/assets/geofence-containment.gif)
+![Geofencing Feature](https://assets.geoman.io//assets/geofence-containment.gif)
 
 - Introduced advanced geofencing capabilities to prevent layer intersections and ensure containment
 - Added global options for `preventIntersection` and `requireContainment`
@@ -63,7 +63,7 @@ These new features significantly enhance Leaflet-Geoman's capabilities for map e
 ### Features
 Add SnapGuide feature that enables 90° guides while drawing and editing shapes
 
-![Snap Guides Demo](https://geoman-static.onrender.com/assets/snap-guides-fast.gif)
+![Snap Guides Demo](https://assets.geoman.io//assets/snap-guides-fast.gif)
 
 Snap Guides are a powerful tool to create precise geometries. They are especially useful when drawing or editing shapes. Exclusive for Leaflet-Geoman Pro ⭐
 
@@ -123,7 +123,7 @@ Options: `autoTracing`, `autoTraceMaxZoom`, `autoTraceMaxDistance`
 map.pm.setGlobalOptions({autoTracing: true});
 ```
 
-![AutoTracing Demo](https://geoman-static.onrender.com/assets/auto-tracing.gif)
+![AutoTracing Demo](https://assets.geoman.io//assets/auto-tracing.gif)
 
 ## v2.8.0
 
@@ -168,10 +168,10 @@ Scale mode allows you to scale shapes by dragging a corner of the shape.
 ### Minor Changes 
 
 *Split*
-![geoman-pro-split](https://geoman-static.onrender.com/assets/split.gif)
+![geoman-pro-split](https://assets.geoman.io//assets/split.gif)
 
 *Measurement*
-![geoman-pro-measurement](https://geoman-static.onrender.com/assets/measurement-demo.gif)
+![geoman-pro-measurement](https://assets.geoman.io//assets/measurement-demo.gif)
 
 
 - Snapping now works on circle border: #587
