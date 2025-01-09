@@ -9,24 +9,49 @@ interface Props {
 
 const Example: React.FC<Props> = ({displayFormat}) => {
 
-  const polygonsToAdd = [
-    {
-      type: "Polygon",
-      coordinates: [
-        [
-          [7.456541, 51.512161],
-          [7.461689, 51.518224],
-          [7.46525, 51.515046],
-          [7.470054, 51.517636],
-          [7.472972, 51.511173],
-          [7.469797, 51.50738],
-          [7.461132, 51.507006],
-          [7.460745, 51.509277],
-          [7.456541, 51.512161],
-        ],
-      ],
-    },
-  ]
+  const polygonsToAdd = {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        properties: {},
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [7.456541, 51.512161],
+              [7.461689, 51.518224],
+              [7.46525, 51.515046],
+              [7.470054, 51.517636],
+              [7.472972, 51.511173],
+              [7.469797, 51.50738],
+              [7.461132, 51.507006],
+              [7.460745, 51.509277],
+              [7.456541, 51.512161],
+            ],
+          ],
+        }
+      },
+      {
+        "type": "Feature",
+        properties: {},
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [7.470054,51.517636],
+              [7.461689,51.518224],
+              [7.458644,51.520547],
+              [7.481046,51.519292],
+              [7.480745,51.512936],
+              [7.472972,51.511173],
+              [7.470054,51.517636]
+            ],
+          ],
+        }
+      }
+    ]
+  };
 
   const geomanControlOptions = {
     controls: {
@@ -40,7 +65,7 @@ const Example: React.FC<Props> = ({displayFormat}) => {
       drawText: false,
       optionsControls: true,
       editControls: true,
-      dragMode: false,
+      dragMode: true,
       cutPolygon: false,
       editPolygon: true,
       removalMode: false,

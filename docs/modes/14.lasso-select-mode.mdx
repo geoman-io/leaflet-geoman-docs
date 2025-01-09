@@ -30,6 +30,13 @@ The following methods are available on `map.pm`:
 | getLassoMode()                     | `String`  | Returns the current Lasso mode.                                        |
 | setLassoSelectMode(mode)           | -         | Sets the Lasso select mode (CONTAIN or INTERSECT).                     |
 | getLassoSelectMode()               | `String`  | Returns the current Lasso select mode.                                 |
+| setLassoAppendMode()               | -         | Sets the Lasso Mode to Append. Layers will be added to the selection.           |
+| setLassoSubtractMode()             | -         | Sets the Lasso Mode to Subtract. Layers will be removed from the selection.     |
+| setLassoResetMode()                | -         | Sets the Lasso Mode to Reset. Layer selection will be cleared before each draw. |
+| setLassoIntersectSelectMode()      | -         | Sets the Lasso Select Mode to Intersect.                                        |
+| setLassoContainSelectMode()        | -         | Sets the Lasso Select Mode to Contain.                                          |
+| cleanupSelection()                 | -         | Deselect all selected layers.                                                   |
+| getSelectedLayers()                | `Layer[]` | Get all selected layers.                                                        |
 
 ## Lasso Select Options
 
@@ -39,7 +46,7 @@ When enabling Lasso Select Mode, you can pass options to configure its behavior:
 map.pm.enableGlobalLassoMode({
   mode: map.pm.Draw.Lasso.APPEND_MODE,
   selectMode: map.pm.Draw.Lasso.INTERSECT_SELECT_MODE,
-  color: 'red',
+  lassoDrawOptions: { color: 'red' },
 });
 ```
 
@@ -49,7 +56,7 @@ Available options include:
 | :--------- | :------------------------------------------------ | :---------------------------------------------------- |
 | mode       | APPEND_MODE, SUBTRACT_MODE, RESET_MODE            | Determines how selections are handled.                |
 | selectMode | CONTAIN_SELECT_MODE, INTERSECT_SELECT_MODE        | Determines how layers are selected.                   |
-| color      | Any valid color value                             | Sets the color of the lasso line while drawing.       |
+| lassoDrawOptions      | Leaflet path options                   | Sets the Style for the lasso polygon while drawing. The option `fill` will be always true.       |
 
 ## Lasso Modes
 
@@ -88,7 +95,7 @@ The following events are available on a map instance:
 | Event                              | Params | Description                                     | Output                    |
 | :--------------------------------- | :----- | :---------------------------------------------- | :------------------------ |
 | pm:globallassomodetoggled          | `e`    | Fired when Lasso Select Mode is toggled.        | `enabled`, `map`          |
-| pm:lassofinish                     | `e`    | Fired when a lasso selection is completed.      | `layers`, `selection`     |
+| pm:lasso-select                    | `e`    | Fired when a lasso selection is changed.        | `lassoCoords`, `selectionChangedLayers`, `selectedLayers` |
 
 ## Example Usage
 
@@ -100,9 +107,9 @@ map.pm.enableGlobalLassoMode({
 });
 
 // Listen for selection changes
-map.on('pm:lassofinish', (e) => {
-  console.log('Selected layers:', e.layers);
-  console.log('Current selection:', e.selection);
+map.on('pm:lasso-select  ', (e) => {
+  console.log('Selected layers:', e.selectedLayers);
+  console.log('Current selection:', e.lassoCoords);
 });
 
 // Get currently selected layers

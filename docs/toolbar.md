@@ -54,8 +54,18 @@ See the available options in the table below.
 | snappingOption     | `true`      | Adds a button to toggle the Snapping Option ⭐.                                                   |  
 | splitMode          | `true`      | Adds a button to toggle the Split Mode for all layers ⭐.                                         |  
 | scaleMode          | `true`      | Adds a button to toggle the Scale Mode for all layers ⭐.                                         |  
-| autoTracingOption  | `false`     | Adds a button to toggle the Auto Tracing Option ⭐.                                               |  
-| snapGuidesOption  | `true`     | Adds a button to toggle the SnapGuides Option ⭐.                                               |  
+| autoTracingOption  | `false`     | Adds a button to toggle the Auto Tracing Option ⭐.                                               |
+| snapGuidesOption   | `true`      | Adds a button to toggle the SnapGuides Option ⭐.                                                 |
+| drawFreehand       | `false`     | Adds button to draw Freehand ⭐.                                                                  |
+| lassoMode          | `false`     | Adds button to toggle Lasso mode ⭐.                                                              |
+| copyLayerMode      | `false`     | Adds button to toggle CopyLayer mode ⭐.                                                          |
+| lineSimplificationMode  | `false`     | Adds button to toggle LineSimplification mode ⭐.                                            |
+| bringToMode        | `false`     | Adds button to toggle Bring To modes ⭐.                                                          |
+| bringToFrontMode   | `false`     | Adds button to toggle Bring To Front mode ⭐.                                                     |
+| sendToBackMode     | `false`     | Adds button to toggle Send to Back mode ⭐.                                                       |
+| spitalMode         | `false`     | Adds button to toggle Spital mode ⭐.                                                             |
+| differenceMode     | `false`     | Adds button to toggle Difference mode ⭐.                                                         |
+| unionMode          | `false`     | Adds button to toggle Union mode ⭐.                                                              |
 
 To pass options to the buttons you have two ways:
 ```js

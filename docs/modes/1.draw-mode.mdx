@@ -77,7 +77,7 @@ See the available options in the table below.
 | closedPolygonEdge      | `false`                                   | Closes the Polygon while drawing ⭐.                                                                                                                                                                      |
 | closedPolygonFill      | `false`                                   | Shows the Polygon fill while drawing ⭐.                                                                                                                                                                  |
 | autoTracing            | `false`                                   | Enables auto tracing while drawing ⭐.                                                                                                                                                                    |
-| allowCircleCut         | `true`                                    | Allow Cutting of a Circle ⭐.                                                                                                                                                                             |
+| freehandOptions        | `-`                                       | Leaflet path options for the freehand polygon while drawing. To the resulting layer will be the pathOptions applied. `fill: true` will create a Polygon else a Polyline. ⭐.                                                                                                                                                                    |
 
 This options can only set over `map.pm.setGlobalOptions({})`:
 
@@ -124,6 +124,7 @@ Here's a list of layer events you can listen to:
 | pm:centerplaced | `e`    | Called when the center of a circle is placed/moved.                                                                   | `shape`, `workingLayer`, `latlng`                                                                       |
 | pm:change       | `e`    | Fired coordinates of the layer changed.                                                                               | `layer`, `latlngs`, `shape`                                                                             |
 | pm:intersect    | `e`    | When `allowSelfIntersection: false`, this event is fired as soon as a self-intersection is detected.                  | `layer`, `intersection`, `shape`                                                                        |
+
 For making the snapping to other layers selective, you can add the "snapIgnore" option to your layers to disable the snapping to them during drawing.
 
 ```js

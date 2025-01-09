@@ -22,7 +22,7 @@ See the available options for `textOptions` in the table below.
 | focusAfterDraw | `true`  | Directly after placing the marker, text editing is activated. |
 | removeIfEmpty  | `true`  | The text layer is removed if no text is written.              |
 | className      | ``      | Custom CSS Classes. Separated by a space.                     |
-| textMarkerCentered| `true`  | Centers the text around the marker.                                      |
+| textMarkerCentered| `true`  | Centers the text around the marker. ⭐                     |
 
 #### Text Layer Editing:
 
