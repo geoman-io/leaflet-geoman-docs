@@ -2,6 +2,40 @@
 title: Leaflet-Geoman Free
 ---
 
+## v2.18.1
+
+#### What's Changed
+
+* Fix: Circle outer-marker snapping didn't change radius by @Falke-Design in https://github.com/geoman-io/leaflet-geoman/pull/1549
+
+## v2.18.0
+
+#### What's Changed
+
+* fixes setLang to handle navigator.language formats (such as "fr-FR") by @mscno in https://github.com/geoman-io/leaflet-geoman/pull/1499
+* Fix missing type definition by @m208 in https://github.com/geoman-io/leaflet-geoman/pull/1514
+* Fix for resizeableCircle #1516 by @DoiMayank in https://github.com/geoman-io/leaflet-geoman/pull/1518
+* Fix bug in snapping when polyline has only one coordinate by @Falke-Design in https://github.com/geoman-io/leaflet-geoman/pull/1526
+* Upgrade Codebase by @Falke-Design in https://github.com/geoman-io/leaflet-geoman/pull/1533
+* Fix moving center marker of circle when snapping is disabled by @Falke-Design in https://github.com/geoman-io/leaflet-geoman/pull/1532
+* fix: Make sure text layer's text is center by @zzxming in https://github.com/geoman-io/leaflet-geoman/pull/1509
+* Allow removal of holes in polygons while maintaining the minimum vertex count of the geometry by @Tobikblom in https://github.com/geoman-io/leaflet-geoman/pull/1475
+* Cleanup temp layers after editing / removing by @Falke-Design in https://github.com/geoman-io/leaflet-geoman/pull/1534
+* Show HintMarker at the last position if continueDrawing is enabled by @Falke-Design in https://github.com/geoman-io/leaflet-geoman/pull/1536
+* Only check self-intersection when allowSelfIntersection is false by @Falke-Design in https://github.com/geoman-io/leaflet-geoman/pull/1537
+* Fixes: While drawing the crosshair cursor is always actvie by @Falke-Design in https://github.com/geoman-io/leaflet-geoman/pull/1538
+* Add new option to disable vertex snapping by @Falke-Design in https://github.com/geoman-io/leaflet-geoman/pull/1539
+* Fix Text test by @Falke-Design in https://github.com/geoman-io/leaflet-geoman/pull/1540
+
+#### New Contributors
+
+* @m208 made their first contribution in https://github.com/geoman-io/leaflet-geoman/pull/1514
+* @DoiMayank made their first contribution in https://github.com/geoman-io/leaflet-geoman/pull/1518
+* @zzxming made their first contribution in https://github.com/geoman-io/leaflet-geoman/pull/1509
+* @Tobikblom made their first contribution in https://github.com/geoman-io/leaflet-geoman/pull/1475
+
+**Full Changelog**: https://github.com/geoman-io/leaflet-geoman/compare/v2.17.0...v2.18.0
+
 ## v2.17.0
 
 * Updates esbuild to 8.56, prettier to 3.2.4 and fixes lint config (1444) and swap to esbuild by @mscno in https://github.com/geoman-io/leaflet-geoman/pull/1445
