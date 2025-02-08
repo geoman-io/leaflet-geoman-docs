@@ -21,6 +21,7 @@ The following methods are available on `map.pm`:
 | disableGlobalScaleMode() | -         | Disables global Scale Mode.                                            |
 | toggleGlobalScaleMode()  | -         | Toggles global Scale Mode.                                             |
 | globalScaleModeEnabled() | `Boolean` | Returns `true` if global Scale Mode is enabled. `false` when disabled. |
+| cancelGlobalScaleMode()  | -         | Reverts the layers to the state before changing.                       |
 
 The following methods are available for layers under `layer.pm`:
 
@@ -30,6 +31,7 @@ The following methods are available for layers under `layer.pm`:
 | disableScale()        | -         | Disables Scale Mode on the layer.                                                                                             |
 | scaleEnabled()        | `Boolean` | Returns if Scale Mode is enabled for the layer.                                                                               |
 | scaleLayer(`percent`) | -         | Scale the layer by `x` percent. Also an Object with `{w: width, h: height}` can be passed. Scale up `> 0` , scale down `< 0`. |
+| cancel()              | -         | Reverts the layer to the state before changing.                                                                               |
 
 The following events are available on a layer instance:
 
@@ -40,6 +42,8 @@ The following events are available on a layer instance:
 | pm:scalestart   | `e`    | Fired when scale starts on a layer.       | `layer`, `helpLayer`, `originLatLngs`                  |
 | pm:scale        | `e`    | Fired when a layer is scaled.             | `layer`, `helpLayer`, `oldLatLngs`, `newLatLngs`       |
 | pm:scaleend     | `e`    | Fired when scale ends on a layer.         | `layer`, `helpLayer`, `originLatLngs`, `newLatLngs`    |
+| pm:change       | `e`    | Fired coordinates of the layer changed.       | `layer`, `latlngs`, `shape`                        |
+| pm:cancel       | `e`    | Fired when the layer changes are canceled.    | `layer`                                            |
 
 The following events are available on a map instance:
 
@@ -51,6 +55,7 @@ The following events are available on a map instance:
 | pm:scalestart             | `e`    | Fired when scale starts on a layer.       | `layer`, `helpLayer`, `originLatLngs`, `originLatLngs` |
 | pm:scale                  | `e`    | Fired when a layer is scaled.             | `layer`, `helpLayer`, `oldLatLngs`, `newLatLngs`       |
 | pm:scaleend               | `e`    | Fired when scale ends on a layer.         | `layer`, `helpLayer`, `originLatLngs`, `newLatLngs`    |
+| pm:globalcancel           | `e`    | Fired when cancel of a Mode is called.    | `map`                                                  |
 
 ## Example
 

@@ -23,12 +23,14 @@ The following methods are available on `map.pm`:
 | disableGlobalLineSimplificationMode() | -         | Disables global Line Simplification Mode.                                            |
 | toggleGlobalLineSimplificationMode()  | -         | Toggles global Line Simplification Mode.                                             |
 | globalLineSimplificationModeEnabled() | `Boolean` | Returns `true` if global Line Simplification Mode is enabled. `false` when disabled. |
+| cancelGlobalLineSimplificationMode()  | -         | Reverts the layers to the state before changing. ⭐                                  |
 
 The following events are available on a map instance:
 
-| Event                     | Params | Description                               | Output                                                 |
-| :------------------------ | :----- | :---------------------------------------- | :----------------------------------------------------- |
-| pm:globallinesimplificationmodetoggled | `e`    | Fired when Line Simplification Mode is toggled.         | `enabled`, `map`                                       |
+| Event                                  | Params | Description                                     | Output             |
+| :------------------------------------- | :----- | :---------------------------------------------- | :----------------- |
+| pm:globallinesimplificationmodetoggled | `e`    | Fired when Line Simplification Mode is toggled. | `enabled`, `map`   |
+| pm:globalcancel                        | `e`    | Fired when cancel of a Mode is called. ⭐       | `map`             |
 
 
 ### Line Simplification Mode Button in the Toolbar

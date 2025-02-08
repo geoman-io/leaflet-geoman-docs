@@ -42,6 +42,7 @@ The following methods are available for layers under `layer.pm`:
 | getShape()            | `String`  | Returns the shape of the layer.                                                                                            |
 | setOptions(`options`) | -         | Set the options on the layer.                                                                                              |
 | getOptions()          | `Object`  | Returns the options of the layer.                                                                                          |
+| cancel()              | -         | Reverts the layer to the state before changing. ⭐                                                                         |
 
 ### Edit Mode Options
 
@@ -118,12 +119,14 @@ The following events are available on a layer instance:
 | pm:intersect       | `e`    | When `allowSelfIntersection: false`, this event is fired as soon as a self-intersection is detected.   | `layer`, `intersection`, `shape`                                                                        |
 | pm:centerplaced    | `e`    | Fired when the center of a circle is moved.                                                            | `layer`, `latlng`, `shape`                                                                              |
 | pm:change          | `e`    | Fired coordinates of the layer changed.                                                                | `layer`, `latlngs`, `shape`                                                                             |
+| pm:cancel          | `e`    | Fired when the layer changes are canceled. ⭐                                                          | `layer`                                                                                                 |
 
 The following events are available on a map instance:
 
-| Event                    | Params | Description                      | Output           |
-| :----------------------- | :----- | :------------------------------- | :--------------- |
-| pm:globaleditmodetoggled | `e`    | Fired when Edit Mode is toggled. | `enabled`, `map` |
+| Event                    | Params | Description                                | Output           |
+| :----------------------- | :----- | :----------------------------------------- | :--------------- |
+| pm:globaleditmodetoggled | `e`    | Fired when Edit Mode is toggled.           | `enabled`, `map` |
+| pm:globalcancel          | `e`    | Fired when cancel of a Mode is called. ⭐  | `map`            |
 
 You can also listen to specific Edit Mode events on the map instance like this:
 
