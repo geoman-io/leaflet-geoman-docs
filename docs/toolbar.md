@@ -66,6 +66,7 @@ See the available options in the table below.
 | spitalMode         | `false`     | Adds button to toggle Spital mode ⭐.                                                             |
 | differenceMode     | `false`     | Adds button to toggle Difference mode ⭐.                                                         |
 | unionMode          | `false`     | Adds button to toggle Union mode ⭐.                                                              |
+| hideCancelActionOf | `[]`        | Hide the cancel button for edit modes ⭐. (`editMode`,`dragMode`,`removalMode`,`rotateMode`, `scaleMode`, `lineSimplificationMode`) |
 
 To pass options to the buttons you have two ways:
 ```js
