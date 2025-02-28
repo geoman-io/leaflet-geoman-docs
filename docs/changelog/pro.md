@@ -1,6 +1,30 @@
 ---
 title: Leaflet-Geoman Pro ⭐
 ---
+## v2.14.0 Adding cancel to Modes
+Feburary 2025
+
+- To the modes `Edit`, `Drag`, `Removal`, `Rotate`, `Scale`, `LineSimplification` we added a `cancel()` logic. 
+  - New events: 
+    - `pm:cancel` fired for the layer
+    - `pm:globalcancel` fired if the cancel method of a global mode is executed.
+    - `pm:undoremove` fired if a removed layer is added back to the map via cancel.
+  - New methods:
+    - `cancel()` for all Shapes
+    - `cancelGlobalEditMode()`
+    - `cancelGlobalDragMode()`
+    - `cancelGlobalRemovalMode()`
+    - `cancelGlobalRotateMode()`
+    - `cancelGlobalScaleMode()`
+    - `cancelGlobalLineSimplificationMode()`
+  - Toolbar
+    - The option `hideCancelActionOf` hides the `cancel` button for each mode in the Toolbar.
+- Scaling fires `pm:update` and `pm:change` now too
+- Updated Typscript-Types to the latest code
+- Updated base to Leaflet-Geoman-Free version 2.18.3
+- Fixed: Invalid splitting caused re-creation of the layer
+- Fixed: closedPolygonEdge didn't worked well with removeLastVertex
+
 
 ## v2.13.0
 
