@@ -33,6 +33,7 @@ The following methods are available on `map.pm`:
 | disableGlobalRotateMode() | -         | Disables global Rotate Mode.                                            |
 | toggleGlobalRotateMode()  | -         | Toggles global Rotate Mode.                                             |
 | globalRotateModeEnabled() | `Boolean` | Returns `true` if global Rotate Mode is enabled. `false` when disabled. |
+| cancelGlobalRotateMode()  | -         | Reverts the layers to the state before changing. ⭐                    |
 
 The following methods are available for layers under `layer.pm`:
 
@@ -47,6 +48,7 @@ The following methods are available for layers under `layer.pm`:
 | setInitAngle(`degrees`)       | -         | Set the initial angle of the layer in degrees.                              |
 | setRotationCenter(`center`)   | -         | Change the center of rotation. Pass null to use the shape's default center. |
 | getRotationCenter()           | `LatLng`  | Returns the center of rotation.                                             |
+| cancel()                      | -         | Reverts the layer to the state before changing. ⭐                          |
 
 The following events are available on a layer instance:
 
@@ -58,6 +60,7 @@ The following events are available on a layer instance:
 | pm:rotate        | `e`    | Fired when a layer is rotated.               | `layer`, `helpLayer`, `startAngle`, `angle`, `angleDiff`, `oldLatLngs`, `newLatLngs` |
 | pm:rotateend     | `e`    | Fired when rotation ends on a layer.         | `layer`, `helpLayer`, `startAngle`, `angle`, `originLatLngs`, `newLatLngs`           |
 | pm:change        | `e`    | Fired coordinates of the layer changed.      | `layer`, `latlngs`, `shape`                                                          |
+| pm:cancel        | `e`    | Fired when the layer changes are canceled. ⭐ | `layer`                                                                             |
 
 The following events are available on a map instance:
 
@@ -69,6 +72,7 @@ The following events are available on a map instance:
 | pm:rotatestart             | `e`    | Fired when rotation starts on a layer.       | `layer`, `helpLayer`, `startAngle`, `originLatLngs`                                  |
 | pm:rotate                  | `e`    | Fired when a layer is rotated.               | `layer`, `helpLayer`, `startAngle`, `angle`, `angleDiff`, `oldLatLngs`, `newLatLngs` |
 | pm:rotateend               | `e`    | Fired when rotation ends on a layer.         | `layer`, `helpLayer`, `startAngle`, `angle`, `originLatLngs`, `newLatLngs`           |
+| pm:globalcancel            | `e`    | Fired when cancel of a Mode is called. ⭐    | `map`                                                                                |
 
 ## Example
 
