@@ -101,6 +101,7 @@ Here's a list of map events you can listen to:
 | pm:drawstart             | `e`    | Called when Draw Mode is enabled. Payload includes the shape type and working layer.    | `shape`, `workingLayer`         |
 | pm:drawend               | `e`    | Called when Draw Mode is disabled. Payload includes the shape type.                     | `shape`                         |
 | pm:create                | `e`    | Called when a shape is drawn/finished. Payload includes shape type and the drawn layer. | `shape`, `layer`                |
+| pm:error                 | `e`    | Fired when an error is thrown. ⭐                                                       | `source`, `message`, `payload`  |
 
 There are also several events for layers during draw. Register an event like this:
 

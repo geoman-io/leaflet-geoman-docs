@@ -128,6 +128,7 @@ The following events are available on a map instance:
 | :----------------------- | :----- | :----------------------------------------- | :--------------- |
 | pm:globaleditmodetoggled | `e`    | Fired when Edit Mode is toggled.           | `enabled`, `map` |
 | pm:globalcancel          | `e`    | Fired when cancel of a Mode is called. ⭐  | `map`            |
+| pm:error                 | `e`    | Fired when an error is thrown. ⭐          | `source`, `message`, `payload`  |
 
 You can also listen to specific Edit Mode events on the map instance like this:
 
