@@ -1,7 +1,7 @@
 ---
 title: Leaflet-Geoman Pro ⭐
 ---
-## v2.15.0 Adding cancel to Modes
+## v2.15.0 Adding `pm:error` event
 April 2025
 
 - Fix handling the ratio conversion in scaleLayer (Breaking Change)
