@@ -1,6 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import llmTxtPlugin from './plugins/llm-txt-plugin';
 
 const config: Config = {
   title: 'Documentation for Leaflet-Geoman',
@@ -55,6 +56,8 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
+
+  plugins: [llmTxtPlugin],
 
   themeConfig: {
     // Replace with your project's social card
