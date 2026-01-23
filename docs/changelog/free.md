@@ -2,61 +2,102 @@
 title: Leaflet-Geoman Free
 ---
 
-## v2.18.1
+## [2.19.0] - 2025-12-12
 
-#### What's Changed
+### Added
 
-* Fix: Circle outer-marker snapping didn't change radius by @Falke-Design in https://github.com/geoman-io/leaflet-geoman/pull/1549
+- Add `exitModeOnEscape` option to exit active modes via Escape key ([#1612](https://github.com/geoman-io/leaflet-geoman/pull/1612))
+- Add Vitest for unit testing and coverage support ([#1606](https://github.com/geoman-io/leaflet-geoman/pull/1606))
 
-## v2.18.0
+### Changed
 
-#### What's Changed
+- Bump turf to 7.x ([#1600](https://github.com/geoman-io/leaflet-geoman/pull/1600))
+- Bump dependencies ([#1599](https://github.com/geoman-io/leaflet-geoman/pull/1599), [#1605](https://github.com/geoman-io/leaflet-geoman/pull/1605), [#1606](https://github.com/geoman-io/leaflet-geoman/pull/1606))
+- Bump CI actions: actions/cache to v5, actions/checkout to v6, actions/setup-node to v6, softprops/action-gh-release to v2 ([#1607](https://github.com/geoman-io/leaflet-geoman/pull/1607), [#1608](https://github.com/geoman-io/leaflet-geoman/pull/1608), [#1609](https://github.com/geoman-io/leaflet-geoman/pull/1609), [#1610](https://github.com/geoman-io/leaflet-geoman/pull/1610))
 
-* fixes setLang to handle navigator.language formats (such as "fr-FR") by @mscno in https://github.com/geoman-io/leaflet-geoman/pull/1499
-* Fix missing type definition by @m208 in https://github.com/geoman-io/leaflet-geoman/pull/1514
-* Fix for resizeableCircle #1516 by @DoiMayank in https://github.com/geoman-io/leaflet-geoman/pull/1518
-* Fix bug in snapping when polyline has only one coordinate by @Falke-Design in https://github.com/geoman-io/leaflet-geoman/pull/1526
-* Upgrade Codebase by @Falke-Design in https://github.com/geoman-io/leaflet-geoman/pull/1533
-* Fix moving center marker of circle when snapping is disabled by @Falke-Design in https://github.com/geoman-io/leaflet-geoman/pull/1532
-* fix: Make sure text layer's text is center by @zzxming in https://github.com/geoman-io/leaflet-geoman/pull/1509
-* Allow removal of holes in polygons while maintaining the minimum vertex count of the geometry by @Tobikblom in https://github.com/geoman-io/leaflet-geoman/pull/1475
-* Cleanup temp layers after editing / removing by @Falke-Design in https://github.com/geoman-io/leaflet-geoman/pull/1534
-* Show HintMarker at the last position if continueDrawing is enabled by @Falke-Design in https://github.com/geoman-io/leaflet-geoman/pull/1536
-* Only check self-intersection when allowSelfIntersection is false by @Falke-Design in https://github.com/geoman-io/leaflet-geoman/pull/1537
-* Fixes: While drawing the crosshair cursor is always actvie by @Falke-Design in https://github.com/geoman-io/leaflet-geoman/pull/1538
-* Add new option to disable vertex snapping by @Falke-Design in https://github.com/geoman-io/leaflet-geoman/pull/1539
-* Fix Text test by @Falke-Design in https://github.com/geoman-io/leaflet-geoman/pull/1540
+### Fixed
 
-#### New Contributors
+- Fix CSS control border radius ([#1561](https://github.com/geoman-io/leaflet-geoman/pull/1561))
+- Fix removing empty text with click on control ([#1570](https://github.com/geoman-io/leaflet-geoman/pull/1570))
+- Prevent malformed HTML resulting from SVG file ([#1577](https://github.com/geoman-io/leaflet-geoman/pull/1577))
+- Prevent the creation of an additional Marker when dragging a Marker in edit mode ([#1569](https://github.com/geoman-io/leaflet-geoman/pull/1569))
+- After editing a vertex, alt-coordinate should be kept ([#1578](https://github.com/geoman-io/leaflet-geoman/pull/1578))
+- Fix unmounting custom controls ([#1575](https://github.com/geoman-io/leaflet-geoman/pull/1575))
+- Fix vertex dragging with markerlimit ([#1579](https://github.com/geoman-io/leaflet-geoman/pull/1579))
+- Fix TypeScript definitions (pathOptions, optional options, Measurement) ([#1580](https://github.com/geoman-io/leaflet-geoman/pull/1580), [#1581](https://github.com/geoman-io/leaflet-geoman/pull/1581))
+- Fix event listener for hint marker display ([#1604](https://github.com/geoman-io/leaflet-geoman/pull/1604))
+- Fix `setLang` for ISO 639-3 language codes ([#1606](https://github.com/geoman-io/leaflet-geoman/pull/1606))
 
-* @m208 made their first contribution in https://github.com/geoman-io/leaflet-geoman/pull/1514
-* @DoiMayank made their first contribution in https://github.com/geoman-io/leaflet-geoman/pull/1518
-* @zzxming made their first contribution in https://github.com/geoman-io/leaflet-geoman/pull/1509
-* @Tobikblom made their first contribution in https://github.com/geoman-io/leaflet-geoman/pull/1475
+## [2.18.3] - 2025-01-16
 
-**Full Changelog**: https://github.com/geoman-io/leaflet-geoman/compare/v2.17.0...v2.18.0
+### Fixed
 
-## v2.17.0
+- Fix CI release scripts
 
-* Updates esbuild to 8.56, prettier to 3.2.4 and fixes lint config (1444) and swap to esbuild by @mscno in https://github.com/geoman-io/leaflet-geoman/pull/1445
-* Add translation of "rotateButton" in languages that lack translation of "rotateButton" by @xiyuvi in https://github.com/geoman-io/leaflet-geoman/pull/1442
-* Add Kyrgyz language support by @Falke-Design in https://github.com/geoman-io/leaflet-geoman/pull/1448
-* After disabling & enabling of button, don't call disable on the draw layer.  by @Falke-Design in https://github.com/geoman-io/leaflet-geoman/pull/1424
-* fix global keyboard and window listeners are not removed after the map is destroyed by @plainheart in https://github.com/geoman-io/leaflet-geoman/pull/1434
-* Improve esbuild bundle script to watch css changes and output sourcemaps by @mscno in https://github.com/geoman-io/leaflet-geoman/pull/1451
-* Snap by priority to all shapes in a radius of 5px instead of to the nearest by @Falke-Design in https://github.com/geoman-io/leaflet-geoman/pull/1454
-* Minor: Force rotateEnabled() to always return a boolean. by @strfx in https://github.com/geoman-io/leaflet-geoman/pull/1455
-* Additional Custom Control Methods by @TurtIeSocks in https://github.com/geoman-io/leaflet-geoman/pull/1295
-* Prevent drawing of rectangle where all corners have the same position by @Falke-Design in https://github.com/geoman-io/leaflet-geoman/pull/1470
-* Update translations pt_br and add translations pt_pt by @leoneljdias in https://github.com/geoman-io/leaflet-geoman/pull/1466
-* Add fallback to english for translations by @Falke-Design in https://github.com/geoman-io/leaflet-geoman/pull/1461
-* Prevent opening popup on ignored layers while drawing by @Falke-Design in https://github.com/geoman-io/leaflet-geoman/pull/1471
-* Add sourcemaps to dist (#1480) by @mscno in https://github.com/geoman-io/leaflet-geoman/pull/1483
-* Remove CSS :focus of marker-icon style to fix jumping while zooming by @Falke-Design in https://github.com/geoman-io/leaflet-geoman/pull/1488
-* Backport Pro changes into OSS by @Falke-Design in https://github.com/geoman-io/leaflet-geoman/pull/1490
+## [2.18.2] - 2025-01-16
 
+### Fixed
 
-## v2.16.0
+- Improve CI release scripts
+
+## [2.18.1] - 2024-12-29
+
+### Fixed
+
+- Fix circle outer-marker snapping not changing radius ([#1549](https://github.com/geoman-io/leaflet-geoman/pull/1549))
+
+## [2.18.0] - 2024-12-13
+
+### Added
+
+- Add new option `snapVertex` to disable vertex snapping ([#1539](https://github.com/geoman-io/leaflet-geoman/pull/1539))
+- Show HintMarker at the last position if `continueDrawing` is enabled ([#1536](https://github.com/geoman-io/leaflet-geoman/pull/1536))
+
+### Changed
+
+- Upgrade codebase and dependencies ([#1533](https://github.com/geoman-io/leaflet-geoman/pull/1533))
+
+### Fixed
+
+- Fix `setLang` to handle navigator.language formats such as "fr-FR" ([#1499](https://github.com/geoman-io/leaflet-geoman/pull/1499))
+- Fix missing type definition `name` in `Action` ([#1514](https://github.com/geoman-io/leaflet-geoman/pull/1514))
+- Rename `resizableCircle` to `resizeableCircle` ([#1518](https://github.com/geoman-io/leaflet-geoman/pull/1518))
+- Fix snapping when polyline has only one coordinate ([#1526](https://github.com/geoman-io/leaflet-geoman/pull/1526))
+- Fix dragging center marker of circle while snapping is disabled ([#1532](https://github.com/geoman-io/leaflet-geoman/pull/1532))
+- Center text in TextLayer with CSS box-sizing ([#1509](https://github.com/geoman-io/leaflet-geoman/pull/1509))
+- Allow removal of holes in polygons while maintaining the minimum vertex count ([#1475](https://github.com/geoman-io/leaflet-geoman/pull/1475))
+- Remove temp layers after editing/removing ([#1534](https://github.com/geoman-io/leaflet-geoman/pull/1534))
+- Only check self-intersection when `allowSelfIntersection` is false ([#1537](https://github.com/geoman-io/leaflet-geoman/pull/1537))
+- Overwrite leaflet-interactive CSS while drawing for crosshair cursor ([#1538](https://github.com/geoman-io/leaflet-geoman/pull/1538))
+
+## [2.17.0] - 2024-05-15
+
+### Added
+
+- Additional Control methods ([#1295](https://github.com/geoman-io/leaflet-geoman/pull/1295))
+- Add fallback to English translation if translation is missing ([#1461](https://github.com/geoman-io/leaflet-geoman/pull/1461))
+- Add sourcemaps to dist ([#1480](https://github.com/geoman-io/leaflet-geoman/pull/1480), [#1483](https://github.com/geoman-io/leaflet-geoman/pull/1483))
+- Add Kyrgyz language support ([#1448](https://github.com/geoman-io/leaflet-geoman/pull/1448))
+
+### Changed
+
+- Updates esbuild to 8.56, prettier to 3.2.4 and swap to esbuild ([#1445](https://github.com/geoman-io/leaflet-geoman/pull/1445))
+- Update translations pt_br and add translations pt_pt ([#1466](https://github.com/geoman-io/leaflet-geoman/pull/1466))
+- Improve esbuild bundle script to watch css changes and output sourcemaps ([#1451](https://github.com/geoman-io/leaflet-geoman/pull/1451))
+- Snap by priority to all shapes in a radius of 5px instead of to the nearest ([#1454](https://github.com/geoman-io/leaflet-geoman/pull/1454))
+
+### Fixed
+
+- Backport Pro changes into OSS ([#1490](https://github.com/geoman-io/leaflet-geoman/pull/1490))
+- Remove `:focus` of marker-icon style to fix marker jumping while zooming ([#1488](https://github.com/geoman-io/leaflet-geoman/pull/1488))
+- Prevent opening popup on ignored layers while drawing ([#1471](https://github.com/geoman-io/leaflet-geoman/pull/1471))
+- Prevent drawing of rectangle when the corners have the same position ([#1470](https://github.com/geoman-io/leaflet-geoman/pull/1470))
+- After disabling & enabling of button, don't call disable on the draw layer ([#1424](https://github.com/geoman-io/leaflet-geoman/pull/1424))
+- Fix global keyboard and window listeners are not removed after the map is destroyed ([#1434](https://github.com/geoman-io/leaflet-geoman/pull/1434))
+- Add translation of "rotateButton" in languages that lack it ([#1442](https://github.com/geoman-io/leaflet-geoman/pull/1442))
+- Force `rotateEnabled()` to always return a boolean ([#1455](https://github.com/geoman-io/leaflet-geoman/pull/1455))
+
+## [2.16.0] - 2024
 
 ### !! Breaking Changes !!
 
