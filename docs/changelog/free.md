@@ -1,5 +1,6 @@
 ---
 title: Leaflet-Geoman Free
+description: "Release history and changelog for Leaflet-Geoman Free version."
 ---
 
 ## [2.19.0] - 2025-12-12
