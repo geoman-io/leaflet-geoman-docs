@@ -21,7 +21,7 @@ Features _not_ available in the free version are marked with a star (⭐).
 **Get Started**
 
 - [🆓 Install Free Version](/getting-started/free-version)
-- [⭐ Install Pro Version](/getting-started/pro-version)
+- <a href="/docs/leaflet/getting-started/pro-version" className="pro-cta-link">⭐ Install Pro Version</a>
 
 **Configuration and Setup**
 
