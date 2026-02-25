@@ -1,8 +1,10 @@
 ---
 sidebar_position: 2
-title: "Pro Version"
+title: "Pro Version ⭐"
 description: "Install Leaflet-Geoman Pro via npm with license key authentication. Covers registry setup, initialization, and Opt-In mode."
 ---
+import ProCallout from '@site/src/components/ProCallout';
+
 ## Installation
 
 Add the following content to `.npmrc` in your project root
@@ -13,7 +15,7 @@ Add the following content to `.npmrc` in your project root
 ```
 
 Replace `<YOUR LICENSE KEY>` with your license key.  
-_Don't have a license key yet? [Purchase one here](https://geoman.io/pricing)._
+_Don't have a license key yet? <a href="https://geoman.io/pricing" className="pro-cta-link">Purchase one here</a>._
 
 #### Install via npm
 
@@ -94,3 +96,5 @@ map.on("pm:create", (e) => {
   L.PM.reInitLayer(e.layer);
 });
 ```
+
+<ProCallout />
