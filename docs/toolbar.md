@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: "Toolbar"
+description: "Add and configure the Leaflet-Geoman toolbar with drawing, editing, and custom control buttons. Covers all toolbar options and events."
 ---
 ### Leaflet-Geoman Toolbar
 

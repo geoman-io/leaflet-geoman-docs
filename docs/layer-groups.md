@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 title: "Layer Groups"
+description: "Work with FeatureGroup and GeoJSON LayerGroups in Leaflet-Geoman. Methods for enabling, disabling, and managing grouped layers."
 ---
 ### LayerGroup
 
