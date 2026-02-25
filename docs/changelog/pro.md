@@ -1,5 +1,6 @@
 ---
 title: Leaflet-Geoman Pro ⭐
+description: "Release history and changelog for Leaflet-Geoman Pro version."
 ---
 ## v2.15.0 Adding `pm:error` event
 April 2025

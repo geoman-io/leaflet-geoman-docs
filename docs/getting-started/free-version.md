@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: "Free Version"
+description: "Install and set up Leaflet-Geoman Free via npm or CDN. Covers initialization, layer exclusion with pmIgnore, and Opt-In mode."
 ---
 ## Installation
 

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: "Pro Version"
+description: "Install Leaflet-Geoman Pro via npm with license key authentication. Covers registry setup, initialization, and Opt-In mode."
 ---
 ## Installation
 

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: "Text Layer"
+description: "Create, edit, and style text layers on the map. Covers text drawing options, programmatic creation, and text editing events."
 ---
 ### Text Layer
 
