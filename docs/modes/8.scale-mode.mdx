@@ -14,6 +14,14 @@ map.pm.enableGlobalScaleMode();
 With the option `centerScaling` the scale origin cen be the center of the layer or the opposite corner of the dragged marker. If `false` Alt-Key can be used.
 The option `uniformScaling` the scales the width and the height with the same ratio. If `false` Shift-Key can be used.
 
+The option `scaleBorderStyle` styles the dashed border help-line that is shown around a layer while scaling. It accepts Leaflet [path options](https://leafletjs.com/reference.html#path-option) and defaults to `{ dashArray: '5,5' }`:
+
+```js
+map.pm.setGlobalOptions({
+  scaleBorderStyle: { color: 'blue', dashArray: '5,5' },
+});
+```
+
 The following methods are available on `map.pm`:
 
 | Method                   | Returns   | Description                                                            |

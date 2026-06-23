@@ -59,6 +59,16 @@ Available options include:
 | selectMode | CONTAIN_SELECT_MODE, INTERSECT_SELECT_MODE        | Determines how layers are selected.                   |
 | lassoDrawOptions      | Leaflet path options                   | Sets the Style for the lasso polygon while drawing. The option `fill` will be always true.       |
 
+### Styling Selected Layers
+
+While `lassoDrawOptions` styles the lasso polygon, the appearance of the **selected layers** is controlled by the global `selectionLayerStyle` option. It accepts Leaflet [path options](https://leafletjs.com/reference.html#path-option) and defaults to `{ fill: false, color: 'red', dashArray: [5, 10] }`:
+
+```js
+map.pm.setGlobalOptions({
+  selectionLayerStyle: { fill: false, color: 'blue', dashArray: [5, 10] },
+});
+```
+
 ## Lasso Modes
 
 Lasso Select Mode has three main modes that determine how selections are handled:

@@ -132,6 +132,7 @@ const Example: React.FC = () => {
       differenceMode: true,
     },
     init: (map: L.Map) => {
+      const L = require('leaflet');
       map.addLayer(L.geoJSON(polygonsToAdd))
       map.pm.enableGlobalDifferenceMode()
     },

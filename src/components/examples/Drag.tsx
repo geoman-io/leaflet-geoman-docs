@@ -52,6 +52,7 @@ const Example: React.FC = () => {
       differenceMode: false,
     },
     init: (map: L.Map) => {
+      const L = require('leaflet');
       map.pm.enableGlobalDragMode()
       map.addLayer(L.geoJSON(polygonsToAdd))
     },

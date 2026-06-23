@@ -53,6 +53,7 @@ const Example: React.FC = () => {
 
   // Define the init function for the map
   const handleMapInit = (map: L.Map) => {
+    const L = require('leaflet');
     map.pm.enableGlobalEditMode()
     map.addLayer(L.geoJSON(polygonsToAdd));
   };

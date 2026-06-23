@@ -133,6 +133,7 @@ const Example: React.FC = () => {
       differenceMode: false,
     },
     init: (map: L.Map) => {
+      const L = require('leaflet');
       map.addLayer(L.geoJSON(polygonsToAdd))
       map.pm.enableGlobalUnionMode()
     },

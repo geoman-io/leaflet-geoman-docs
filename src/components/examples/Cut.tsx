@@ -48,6 +48,7 @@ const Example: React.FC = () => {
       differenceMode: false,
     },
     init: (map: L.Map) => {
+      const L = require('leaflet');
       map.pm.enableGlobalCutMode()
       map.addLayer(L.geoJSON(polygonsToAdd))
     },

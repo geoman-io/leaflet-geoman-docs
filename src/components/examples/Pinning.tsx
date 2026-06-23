@@ -67,6 +67,7 @@ const Example: React.FC<PinningProps> = ({pinning}) => {
       snapGuidesOption: false,
     },
     init: (map: L.Map) => {
+      const L = require('leaflet');
       map.addLayer(L.geoJSON(polygonsToAdd))
       map.pm.setGlobalOptions({
         pinning: pinning ?? true,

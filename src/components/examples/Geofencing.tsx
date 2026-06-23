@@ -66,6 +66,7 @@ const Example: React.FC<Props> = ({preventIntersection=false, requireContainment
       differenceMode: false,
     },
     init: (map: L.Map) => {
+      const L = require('leaflet');
       const lp = L.polygon(latlngs)
       map.addLayer(lp);
       //map.addLayer(L.geoJSON(polygonsToAdd));

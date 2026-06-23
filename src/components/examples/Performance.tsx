@@ -7,11 +7,11 @@ type displayFormat = "metric" | "imperial";
 interface Props {
   limitMarkersToCount?: number,
   limitMarkersToZoom?: number,
-  limitMarkersToViewPort?: boolean,
+  limitMarkersToViewport?: boolean,
   limitMarkersToClick?: boolean,
 }
 
-const Example: React.FC<Props> = ({limitMarkersToCount=-1, limitMarkersToZoom=-1, limitMarkersToViewPort=false, limitMarkersToClick=false }) => {
+const Example: React.FC<Props> = ({limitMarkersToCount=-1, limitMarkersToZoom=-1, limitMarkersToViewport=false, limitMarkersToClick=false }) => {
 
   const polygonsToAdd = [
     {
@@ -110,16 +110,17 @@ const Example: React.FC<Props> = ({limitMarkersToCount=-1, limitMarkersToZoom=-1
       measurementOption: false,
     },
     init: (map: L.Map) => {
+      const L = require('leaflet');
       map.pm.setGlobalOptions({
         limitMarkersToCount: limitMarkersToCount,
-        limitMarkersToViewPort: limitMarkersToViewPort,
+        limitMarkersToViewport: limitMarkersToViewport,
         limitMarkersToClick: limitMarkersToClick,
         limitMarkersToZoom: limitMarkersToZoom,
       })
       map.addLayer(L.geoJSON(polygonsToAdd))
       map.pm.enableGlobalEditMode({
         limitMarkersToCount: limitMarkersToCount,
-        limitMarkersToViewPort: limitMarkersToViewPort,
+        limitMarkersToViewport: limitMarkersToViewport,
         limitMarkersToClick: limitMarkersToClick,
         limitMarkersToZoom: limitMarkersToZoom,
       })

@@ -81,6 +81,7 @@ const Example: React.FC<Props> = ({displayFormat}) => {
       snapGuidesOption: false,
     },
     init: (map: L.Map) => {
+      const L = require('leaflet');
       map.pm.setGlobalOptions({
         autoTracing: true,
       })

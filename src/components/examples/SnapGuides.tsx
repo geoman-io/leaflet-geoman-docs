@@ -65,6 +65,7 @@ const Example: React.FC<Props> = ({angles=[90]}) => {
       snapGuidesOption: true,
     },
     init: (map: L.Map) => {
+      const L = require('leaflet');
       map.pm.setGlobalOptions({
         showSnapGuides: true,
         snapGuidesAngles: angles,

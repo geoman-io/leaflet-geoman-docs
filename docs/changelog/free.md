@@ -3,11 +3,56 @@ title: Leaflet-Geoman Free
 description: "Release history and changelog for Leaflet-Geoman Free version."
 ---
 
+## [2.20.0] - 2026-06-23
+
+### Added
+
+- Extend `LeafletEventHandlerFnMap` with `pm:*` events in the TypeScript definitions for use with react-leaflet ([#1666](https://github.com/geoman-io/leaflet-geoman/pull/1666))
+
+### Changed
+
+- Ship a real, non-minified `leaflet-geoman.js` build alongside the minified bundle ([#1664](https://github.com/geoman-io/leaflet-geoman/pull/1664))
+- Migrate package manager to pnpm with a 7-day dependency cooldown ([#1657](https://github.com/geoman-io/leaflet-geoman/pull/1657))
+- Drop Node 18 support and update to Node 24 ([#1647](https://github.com/geoman-io/leaflet-geoman/pull/1647))
+- Remove obsolete copyright and proprietary information ([#1648](https://github.com/geoman-io/leaflet-geoman/pull/1648))
+- Update dependencies ([#1649](https://github.com/geoman-io/leaflet-geoman/pull/1649))
+
+## [2.19.3] - 2026-04-10
+
+### Fixed
+
+- Bump dependencies and remove vulnerabilities ([#1643](https://github.com/geoman-io/leaflet-geoman/pull/1643))
+- Add missing `source` and custom properties to event handlers in the TypeScript definitions ([#1646](https://github.com/geoman-io/leaflet-geoman/pull/1646))
+
+## [2.19.2] - 2026-02-02
+
+### Added
+
+- Add touch-friendly marker placement hints on touch devices ([#1627](https://github.com/geoman-io/leaflet-geoman/pull/1627))
+
+### Changed
+
+- Replace ESLint and Prettier with oxlint and oxfmt ([#1629](https://github.com/geoman-io/leaflet-geoman/pull/1629))
+
+### Fixed
+
+- Allow polygon completion by self-snapping when `snappable` is `false` ([#1628](https://github.com/geoman-io/leaflet-geoman/pull/1628))
+- Update TypeScript definitions to match implementation ([#1617](https://github.com/geoman-io/leaflet-geoman/pull/1617))
+- Fix broken test for multi-line cut
+
+## [2.19.1] - 2026-02-01
+
+### Changed
+
+- Bump lodash from 4.17.21 to 4.17.23 ([#1620](https://github.com/geoman-io/leaflet-geoman/pull/1620))
+- Improve demo HTML with DevPanel, EventLogger, GeoJSONTools, LayerInspector, and StateInspector ([#1613](https://github.com/geoman-io/leaflet-geoman/pull/1613))
+
 ## [2.19.0] - 2025-12-12
 
 ### Added
 
 - Add `exitModeOnEscape` option to exit active modes via Escape key ([#1612](https://github.com/geoman-io/leaflet-geoman/pull/1612))
+- Add `finishOnEnter` option to finish drawing shapes with the Enter key ([#1612](https://github.com/geoman-io/leaflet-geoman/pull/1612))
 - Add Vitest for unit testing and coverage support ([#1606](https://github.com/geoman-io/leaflet-geoman/pull/1606))
 
 ### Changed

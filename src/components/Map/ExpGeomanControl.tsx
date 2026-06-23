@@ -4,27 +4,11 @@ import * as L from 'leaflet'
 import '@geoman-io/leaflet-geoman-pro'
 import '@geoman-io/leaflet-geoman-pro/dist/leaflet-geoman.css'
 
-// Define the props interface for ExpGeomanControl
-export interface ExpGeomanControlProps {
-  controls: {
-    position?: string;
-    drawMarker?: boolean;
-    drawPolyline?: boolean;
-    measurement?: boolean;
-    drawCircle?: boolean;
-    drawRectangle?: boolean;
-    drawText?: boolean;
-    dragMode?: boolean;
-    cutPolygon?: boolean;
-    splitMode?: boolean;
-    scaleMode?: boolean;
-    pinningOption?: boolean;
-    snappingOption?: boolean;
-    drawCircleMarker?: boolean;
-    rotateMode?: boolean;
-    snapGuidesOption?: boolean;
-    autoTracingOption?: boolean;
-  };
+// Define the props interface for ExpGeomanControl.
+// Extends L.ControlOptions so it satisfies the `P extends ControlOptions`
+// constraint of @react-leaflet/core's createControlComponent.
+export interface ExpGeomanControlProps extends L.ControlOptions {
+  controls: L.PM.ToolbarOptions;
   init: (map: L.Map) => void;
   zoom?: number;
   center?: [number, number];
@@ -32,19 +16,20 @@ export interface ExpGeomanControlProps {
 
 const Geoman = L.Control.extend({
   options: {},
-  initialize(options) {
+  initialize(options: ExpGeomanControlProps) {
     L.setOptions(this, options)
   },
 
-  addTo(map) {
+  addTo(map: L.Map) {
+    const options = this.options as unknown as ExpGeomanControlProps
     if (!map.pm) return
 
     map.pm.addControls({
-      ...this.options.controls,
+      ...options.controls,
     })
-    
-    if (this.options.init) {
-      this.options.init(map)
+
+    if (options.init) {
+      options.init(map)
     }
     map.pm.setGlobalOptions({
       measurements: { measurement: true, displayFormat: 'metric' },
@@ -52,7 +37,7 @@ const Geoman = L.Control.extend({
   },
 })
 
-const createGeomanInstance = (props) => {
+const createGeomanInstance = (props: ExpGeomanControlProps) => {
   return new Geoman(props)
 }
 

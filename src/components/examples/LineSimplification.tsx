@@ -68,6 +68,7 @@ const Example: React.FC<Props> = ({displayFormat}) => {
       lineSimplificationMode: true
     },
     init: (map: L.Map) => {
+      const L = require('leaflet');
       map.pm.enableGlobalLineSimplificationMode()
       map.addLayer(L.geoJSON(polygonsToAdd))
 

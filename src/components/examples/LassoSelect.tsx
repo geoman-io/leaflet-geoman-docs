@@ -69,6 +69,7 @@ const Example: React.FC<Props> = ({}) => {
       lassoSelect: true,
     },
     init: (map: L.Map) => {
+      const L = require('leaflet');
       map.addLayer(L.geoJSON(polygonsToAdd));
       map.pm.setLassoAppendMode()
       map.pm.enableGlobalLassoMode()

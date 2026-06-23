@@ -66,6 +66,7 @@ const Example: React.FC<Props> = ({displayFormat}) => {
       measurementOption: true,
     },
     init: (map: L.Map) => {
+      const L = require('leaflet');
       map.pm.setGlobalOptions({
         measurements: { measurement: true, displayFormat: displayFormat ?? "metric" },
       })

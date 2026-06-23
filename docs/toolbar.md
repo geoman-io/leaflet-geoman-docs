@@ -33,7 +33,7 @@ See the available options in the table below.
 | Option             | Default     | Description                                                                                      |  
 | :----------------- | :---------- | :----------------------------------------------------------------------------------------------- |  
 | position           | `'topleft'` | Toolbar position, possible values are `'topleft'`, `'topright'`, `'bottomleft'`, `'bottomright'` |  
-| positions           | `Object`   | The position of each block (`draw`, `edit`, `custom`, `options`⭐)  can be customized. If not set, the value from `position` is taken. Default: `{draw: '', edit: '', options: '', custom: ''}` [Block Position](#toolbar-block-position) | 
+| positions           | `Object`   | The position of each block (`draw`, `edit`, `custom`, `options`⭐)  can be customized. If not set, the value from `position` is taken. Default: `{draw: '', edit: '', options: '', custom: ''}` [Block Position](/customize/toolbar#toolbar-block-position) | 
 | drawMarker         | `true`      | Adds button to draw Markers.                                                                     |  
 | drawCircleMarker   | `true`      | Adds button to draw CircleMarkers.                                                               |  
 | drawPolyline       | `true`      | Adds button to draw Line.                                                                        |  
@@ -46,7 +46,7 @@ See the available options in the table below.
 | cutPolygon         | `true`      | Adds button to cut a hole in a Polygon or Line.                                                  |  
 | removalMode        | `true`      | Adds a button to remove layers.                                                                  | 
 | rotateMode         | `true`      | Adds a button to rotate layers.                                                                  | 
-| oneBlock           | `false`     | All buttons will be displayed as one block [Customize Controls](#customize-controls).            |
+| oneBlock           | `false`     | All buttons will be displayed as one block [Customize Controls](/customize/toolbar#customize-controls).            |
 | drawControls       | `true`      | Shows all draw buttons / buttons in the `draw` block.                                            |
 | editControls       | `true`      | Shows all edit buttons / buttons in the `edit` block.                                            |
 | customControls     | `true`      | Shows all buttons in the `custom` block.                                                         |

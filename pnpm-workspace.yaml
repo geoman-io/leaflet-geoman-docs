@@ -1,0 +1,9 @@
+# Override the global minimumReleaseAge cooldown for this repo so it can
+# consume freshly-published @geoman-io packages (and their transitive deps)
+# without waiting out the supply-chain cooldown window.
+minimumReleaseAge: 0
+
+# core-js ships a postinstall script that only prints a funding message; the
+# docs build does not need it to run.
+allowBuilds:
+  core-js: false

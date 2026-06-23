@@ -2,6 +2,37 @@
 title: Leaflet-Geoman Pro ⭐
 description: "Release history and changelog for Leaflet-Geoman Pro version."
 ---
+## v2.17.1 TypeScript Fixes
+June 2026
+
+- Fixed the TypeScript definitions so `map.pm.enableGlobalSplitMode()` and `map.pm.enableGlobalCopyLayerMode()` (and their companion `disable`/`toggle`/`enabled` methods) type-check correctly. `PMSplitMap` and `PMCopyLayerMap` are now part of the `PMMap` interface.
+
+## v2.17.0 Tooling Modernization & Free 2.20.0
+June 2026
+
+- Migrated the package manager from npm to pnpm 11
+- Switched linting and formatting from ESLint + Prettier to oxlint + oxfmt
+- Added a 7-day supply-chain cooldown (`minimumReleaseAge`) for dependency resolution
+- Requires Node.js 24+ (CI runs on Node 24.x and 26.x)
+- Ported self-snap completion: polygons and lines can now be finished by snapping to the first point even when global snapping is disabled
+- Ported touch-friendly marker placement hints for coarse-pointer (touch) devices
+- Ported the latest TypeScript definition fixes from the Free version
+- Bumped dependencies (lodash, `@turf/*`, TypeScript, esbuild)
+- Merged all updates from [Leaflet-Geoman Free 2.20.0](https://github.com/geoman-io/leaflet-geoman/releases/tag/v2.20.0)
+
+## v2.16.0 Merge Free 2.19.0
+December 2025
+
+- Added `exitModeOnEscape` global option to exit any active mode by pressing the `Escape` key
+- Added `finishOnEnter` global option to finish drawing a shape with the `Enter` key
+- Added `deleteControl(name)` method to `map.pm.Toolbar` to remove a control from the Toolbar
+- Bumped Turf to 7.x and fixed the intersection logic
+- Fixed multiple Split issues: Multipolygon splitting, intersection point on the border, splitting at coordinates `0,0`, and intersection offset
+- Fixed `addVertexOnClick` not working together with `limitMarkersToCount`
+- Updated the TypeScript definitions to include the latest Geoman Pro features
+- Added Vitest for unit testing and coverage support
+- Merged all updates from [Leaflet-Geoman Free 2.19.0](https://github.com/geoman-io/leaflet-geoman/releases/tag/v2.19.0)
+
 ## v2.15.0 Adding `pm:error` event
 April 2025
 
@@ -85,8 +116,8 @@ These new features significantly enhance Leaflet-Geoman's capabilities for map e
 
 ## v2.12.0: Added Union and Difference Modes
 
-- Add [Union feature](/modes/9.union-mode) that merges two layers into one
-- Add [Difference feature](/modes/10.difference-mode) that subtracts one layer from another and returns the difference as a new layer
+- Add [Union feature](/modes/union-mode) that merges two layers into one
+- Add [Difference feature](/modes/difference-mode) that subtracts one layer from another and returns the difference as a new layer
 - Various bug fixes and improvements
 - Merged all updates from [Leaflet-Geoman Free 2.17.0](https://github.com/geoman-io/leaflet-geoman/releases/tag/v2.17.0)
 

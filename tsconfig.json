@@ -3,6 +3,10 @@
   "module": "es6",
   "extends": "@docusaurus/tsconfig",
   "compilerOptions": {
-    "baseUrl": "."
+    // `baseUrl` is required for the inherited `@site/*` path mapping to resolve
+    // from the project root. It is deprecated in TS 6.0 (removed in 7.0), so
+    // silence that until Docusaurus updates their base config.
+    "baseUrl": ".",
+    "ignoreDeprecations": "6.0"
   }
 }
