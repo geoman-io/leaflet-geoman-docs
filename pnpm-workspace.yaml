@@ -1,6 +1,9 @@
-# Exclude @geoman-io packages from the global minimumReleaseAge supply-chain
-# cooldown so freshly-published geoman releases can be installed immediately.
-# All other dependencies still respect the cooldown.
+# Supply-chain cooldown: don't resolve dependency versions published less than
+# 24h ago (1440 minutes). Overrides the (longer) global pnpm config for this repo.
+minimumReleaseAge: 1440
+
+# Exclude @geoman-io packages from the cooldown so freshly-published geoman
+# releases can be installed immediately. All other dependencies still wait 24h.
 minimumReleaseAgeExclude:
   - "@geoman-io/*"
 
