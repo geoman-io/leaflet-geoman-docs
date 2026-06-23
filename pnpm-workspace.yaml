@@ -2,7 +2,7 @@
 # cooldown so freshly-published geoman releases can be installed immediately.
 # All other dependencies still respect the cooldown.
 minimumReleaseAgeExclude:
-  - '@geoman-io/*'
+  - "@geoman-io/*"
 
 # core-js ships a postinstall script that only prints a funding message; the
 # docs build does not need it to run.
