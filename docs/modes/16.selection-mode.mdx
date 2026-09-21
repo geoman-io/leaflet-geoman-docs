@@ -1,0 +1,52 @@
+---
+title: Selection Tool ⭐
+description: "Select layers by clicking them and manage the current Leaflet-Geoman Pro selection programmatically."
+---
+
+## Selection Tool ⭐
+
+The Selection Tool is the shared selection API used by Lasso, Union, and
+Difference modes. It can also be enabled directly to select layers by clicking
+them.
+
+```js
+map.pm.enableSelectionTool((layer) => layer.options.selectable !== false);
+
+map.pm.addSelection(layer);
+map.pm.removeSelection(layer);
+
+const selected = map.pm.getSelectedLayers();
+map.pm.cleanupSelection();
+map.pm.disableSelectionTool();
+```
+
+The following methods are available on `map.pm`:
+
+| Method | Returns | Description |
+| :----- | :------ | :---------- |
+| enableSelectionTool(`filter`) | - | Enables click selection. The optional filter receives each layer and returns whether it may be selected. |
+| disableSelectionTool() | - | Disables click selection and clears the current selection. |
+| selectionToolEnabled() | `Boolean` | Returns whether click selection is enabled. |
+| addSelection(`layer`) | - | Adds a layer to the selection. |
+| removeSelection(`layer`) | - | Removes a layer from the selection. |
+| getSelectedLayers() | `Layer[]` | Returns the selected layers. |
+| isLayerSelected(`layer`) | `Boolean` | Returns whether a layer is selected. |
+| cleanupSelection() | - | Clears the selection. |
+
+Style the selection outlines with the global `selectionLayerStyle` option:
+
+```js
+map.pm.setGlobalOptions({
+  selectionLayerStyle: { fill: false, color: 'blue', dashArray: [5, 10] },
+});
+```
+
+The following events are fired on the map:
+
+| Event | Output | Description |
+| :---- | :----- | :---------- |
+| pm:selectionadd | `layer` | Fired after a layer is added to the selection. |
+| pm:selectionremove | `layer` | Fired after a layer is removed from the selection. |
+
+Setting the per-layer `lassoSelectable` option to `false` excludes that layer
+from the selection tool and Lasso Select Mode.

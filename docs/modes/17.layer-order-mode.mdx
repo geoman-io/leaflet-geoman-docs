@@ -1,0 +1,41 @@
+---
+title: Layer Order Modes ⭐
+description: "Bring vector and image-overlay layers to the front or send them to the back with Leaflet-Geoman Pro."
+---
+
+## Layer Order Modes ⭐
+
+Bring to Front and Send to Back modes change the visual order of supported
+Leaflet paths and image overlays when the user clicks them. Enabling one mode
+automatically disables the other.
+
+```js
+map.pm.enableGlobalBringToFrontMode();
+map.pm.disableGlobalBringToFrontMode();
+
+map.pm.enableGlobalSendToBackMode();
+map.pm.disableGlobalSendToBackMode();
+```
+
+The following methods are available on `map.pm`:
+
+| Method | Returns | Description |
+| :----- | :------ | :---------- |
+| enableGlobalBringToFrontMode() | - | Enables Bring to Front mode. |
+| disableGlobalBringToFrontMode() | - | Disables Bring to Front mode. |
+| toggleGlobalBringToFrontMode() | - | Toggles Bring to Front mode. |
+| globalBringToFrontModeEnabled() | `Boolean` | Returns whether Bring to Front mode is enabled. |
+| enableGlobalSendToBackMode() | - | Enables Send to Back mode. |
+| disableGlobalSendToBackMode() | - | Disables Send to Back mode. |
+| toggleGlobalSendToBackMode() | - | Toggles Send to Back mode. |
+| globalSendToBackModeEnabled() | `Boolean` | Returns whether Send to Back mode is enabled. |
+
+The following events are fired on the map:
+
+| Event | Output | Description |
+| :---- | :----- | :---------- |
+| pm:globalbringtofrontmodetoggled | `enabled`, `map` | Fired when Bring to Front mode is toggled. |
+| pm:globalbringtobackmodetoggled | `enabled`, `map` | Fired when Send to Back mode is toggled. The historical event name uses `bringtoback`. |
+
+Add the combined toolbar button with `bringToMode: true`, or expose the two
+buttons separately with `bringToFrontMode: true` and `sendToBackMode: true`.

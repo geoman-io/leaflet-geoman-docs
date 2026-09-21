@@ -2,6 +2,25 @@
 title: Leaflet-Geoman Pro ⭐
 description: "Release history and changelog for Leaflet-Geoman Pro version."
 ---
+## v2.20.1 Bundle Fixes
+September 2026
+
+- Fixed the package build so `leaflet-geoman.js` is readable and `leaflet-geoman.min.js` is minified
+
+## v2.20.0 Strict TypeScript Migration
+September 2026
+
+- Migrated the source, tests, demos, and build tooling to strict TypeScript
+- Preserved the existing JavaScript entry points and package API
+- Added package-consumer, declaration, and Leaflet class-contract type coverage
+- Ported migration follow-up fixes for options, toolbar cleanup, and Leaflet compatibility
+
+## v2.17.2 Dependency and CI Update
+September 2026
+
+- Updated dependencies under the configured supply-chain cooldown
+- Explicitly install and verify the Cypress binary in CI
+
 ## v2.17.1 TypeScript Fixes
 June 2026
 
@@ -294,4 +313,4 @@ Scale mode allows you to scale shapes by dragging a corner of the shape.
 - Create LICENSE.md: 47cd94eee9f18707d769f5ea7f520099aa903869
 - Typo drag -&gt; removal: a957555f8f56d0539765497fbfb88c37cba59467
 
-### Credits 
+### Credits
