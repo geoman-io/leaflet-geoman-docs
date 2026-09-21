@@ -3,6 +3,25 @@ title: Leaflet-Geoman Free
 description: "Release history and changelog for Leaflet-Geoman Free version."
 ---
 
+## [2.20.2] - 2026-09-21
+
+### Changed
+
+- Migrate the source, tests, demos, and build tooling to strict TypeScript while preserving the existing JavaScript package API
+- Add package-consumer and Leaflet class-contract type tests
+
+### Fixed
+
+- Honor per-layer rotation permissions for layers added while Global Rotation Mode is active
+- Safely destroy toolbar buttons without calling a nonexistent update hook
+- Port the TypeScript migration follow-up fixes from Pro
+
+## [2.20.1] - 2026-09-11
+
+### Changed
+
+- Update dependencies with the configured seven-day supply-chain cooldown ([#1685](https://github.com/geoman-io/leaflet-geoman/pull/1685))
+
 ## [2.20.0] - 2026-06-23
 
 ### Added

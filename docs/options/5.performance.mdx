@@ -17,6 +17,7 @@ See the available options in the table below.
 | limitMarkersToZoom     | `-1`    | Shows markers when under the given zoom level. ⭐                    |
 | limitMarkersToViewport | `false` | Shows only markers in the viewport. ⭐                               |
 | limitMarkersToClick    | `false` | Shows markers only after the layer was clicked. ⭐                   |
+| limitMarkersCountGlobally | `false` | Applies `limitMarkersToCount` across all edited layers together instead of separately for each layer. ⭐ |
 
 All options can be used together. In fact, the performance increases even more when using multiple options together, depending on your desired user experience.
 
@@ -44,7 +45,8 @@ Performance improvements enabled with all features:
   limitMarkersToClick: true, 
   limitMarkersToViewport: true,
   limitMarkersToCount: 10,
-  limitMarkersToZoom: 15
+  limitMarkersToZoom: 15,
+  limitMarkersCountGlobally: true
 }
 ```
 <Performance limitMarkersToZoom={15} limitMarkersToClick={true} limitMarkersToViewport={true} limitMarkersToCount={10}/>

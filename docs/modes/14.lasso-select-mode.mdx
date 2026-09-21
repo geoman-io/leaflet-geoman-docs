@@ -27,9 +27,7 @@ The following methods are available on `map.pm`:
 | disableGlobalLassoMode()           | -         | Disables global Lasso Select Mode.                                     |
 | toggleGlobalLassoMode()            | -         | Toggles global Lasso Select Mode.                                      |
 | globalLassoModeEnabled()           | `Boolean` | Returns `true` if global Lasso Select Mode is enabled, `false` if not. |
-| setLassoMode(mode)                 | -         | Sets the Lasso mode (APPEND, SUBTRACT, or RESET).                      |
 | getLassoMode()                     | `String`  | Returns the current Lasso mode.                                        |
-| setLassoSelectMode(mode)           | -         | Sets the Lasso select mode (CONTAIN or INTERSECT).                     |
 | getLassoSelectMode()               | `String`  | Returns the current Lasso select mode.                                 |
 | setLassoAppendMode()               | -         | Sets the Lasso Mode to Append. Layers will be added to the selection.           |
 | setLassoSubtractMode()             | -         | Sets the Lasso Mode to Subtract. Layers will be removed from the selection.     |
@@ -38,6 +36,11 @@ The following methods are available on `map.pm`:
 | setLassoContainSelectMode()        | -         | Sets the Lasso Select Mode to Contain.                                          |
 | cleanupSelection()                 | -         | Deselect all selected layers.                                                   |
 | getSelectedLayers()                | `Layer[]` | Get all selected layers.                                                        |
+
+The same mode operations are available on the draw instance as
+`map.pm.Draw.Lasso.setAppendMode()`, `setSubtractMode()`, `setResetMode()`,
+`setIntersectSelectMode()`, `setContainSelectMode()`, `getMode()`, and
+`getSelectMode()`.
 
 ## Lasso Select Options
 
@@ -77,7 +80,7 @@ Lasso Select Mode has three main modes that determine how selections are handled
 2. SUBTRACT_MODE: Removes selections from existing ones.
 3. RESET_MODE: Clears existing selections before making new ones.
 
-You can set these modes using the `setLassoMode()` method or when enabling the mode:
+You can set these modes using the dedicated mode methods or when enabling the mode:
 
 ```js
 map.pm.setLassoAppendMode();
@@ -92,7 +95,7 @@ There are two select modes that determine how layers are selected:
 1. CONTAIN_SELECT_MODE: Selects only layers fully contained within the lasso.
 2. INTERSECT_SELECT_MODE: Selects layers that intersect with the lasso.
 
-Set these modes using the `setLassoSelectMode()` method or when enabling the mode:
+Set these modes using the dedicated select-mode methods or when enabling the mode:
 
 ```js
 map.pm.setLassoContainSelectMode();
@@ -118,7 +121,7 @@ map.pm.enableGlobalLassoMode({
 });
 
 // Listen for selection changes
-map.on('pm:lasso-select  ', (e) => {
+map.on('pm:lasso-select', (e) => {
   console.log('Selected layers:', e.selectedLayers);
   console.log('Current selection:', e.lassoCoords);
 });

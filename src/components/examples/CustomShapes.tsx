@@ -11,7 +11,7 @@ const Example: React.FC<Props> = ({init='directDraw'}) => {
 
 
 
-  const polygonGeoJSON = {
+  const polygonGeoJSON: GeoJSON.Feature<GeoJSON.Polygon> = {
     type: 'Feature',
     properties: {},
     geometry: 
@@ -34,7 +34,7 @@ const Example: React.FC<Props> = ({init='directDraw'}) => {
   }
 
 
-  const rectangleGeoJSON = {
+  const rectangleGeoJSON: GeoJSON.Feature<GeoJSON.Polygon> = {
     "type": "Feature",
     "properties": {
       "id": 309,
@@ -70,7 +70,7 @@ const Example: React.FC<Props> = ({init='directDraw'}) => {
     }
   }
 
-  const triangleGeoJSON = {
+  const triangleGeoJSON: GeoJSON.Feature<GeoJSON.Polygon> = {
     "type": "Feature",
     "properties": {
       "id": 351,
