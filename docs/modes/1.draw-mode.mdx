@@ -22,6 +22,14 @@ map.pm.enableDraw("Polygon", {
 map.pm.disableDraw();
 ```
 
+Finish a valid active drawing programmatically with `finishDraw()`. It returns `true` when a layer was completed and `false` when no supported drawing is active or the current geometry is not yet valid.
+
+```js
+if (map.pm.finishDraw()) {
+  console.log("The active drawing was completed");
+}
+```
+
 Currently available shapes are `Marker`, `CircleMarker`, `Circle`, `Line`, `Rectangle`, `Polygon`, `Text`, `Cut`, `CutCircle`⭐ and `Split`⭐.
 
 The following methods are available on `map.pm`:
@@ -30,6 +38,7 @@ The following methods are available on `map.pm`:
 | :------------------------------------------- | :-------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | enableDraw(`shape`,`options`)                | -         | Enable Draw Mode with the passed shape. The `options` are optional.                                                                                                                                                      |
 | disableDraw()                                | -         | Disable Draw Mode.                                                                                                                                                                                                       |
+| finishDraw()                                 | `Boolean` | Finish the active drawing when it contains enough geometry to create a valid layer. Returns `true` when the layer was completed.                                                                                         |
 | Draw.getShapes()                             | `Array`   | Array of available shapes.                                                                                                                                                                                               |
 | Draw.getActiveShape()                        | `String`  | Returns the active shape.                                                                                                                                                                                                |
 | globalDrawModeEnabled()                      | `Boolean` | Returns `true` if global Draw Mode is enabled. `false` when disabled.                                                                                                                                                    |
