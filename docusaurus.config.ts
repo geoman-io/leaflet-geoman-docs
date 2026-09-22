@@ -4,8 +4,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 import llmTxtPlugin from './plugins/llm-txt-plugin';
 
 const config: Config = {
-  title: 'Documentation for Leaflet-Geoman',
-  tagline: 'A library to edit geometries in Leaflet',
+  title: 'Leaflet Drawing and Editing Plugin Documentation | Geoman',
+  tagline: 'Draw, edit, snap, and measure geometries in Leaflet',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here

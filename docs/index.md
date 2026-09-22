@@ -1,16 +1,16 @@
 ---
 sidebar_position: 1
 title: "Introduction"
-description: "Explore Leaflet-Geoman documentation: your guide to mastering this powerful geo-editing tool. Dive into tutorials, code snippets, API references and more."
+description: "Add drawing, editing, snapping, and measurement tools to Leaflet maps with Leaflet-Geoman. Get started with the free version or explore Pro features."
 slug: "/"
 ---
 
-# Documentation
+# Leaflet drawing and editing with Geoman
 
 ### For Leaflet-Geoman (Free & ⭐ Pro)
 
-A Leaflet Plugin For Creating And Editing Geometry Layers
-Draw, Edit, Drag, Cut, Rotate, Split, Scale, Measure, Snap and Pin Layers.
+Leaflet-Geoman is a plugin for drawing and editing geometry layers in Leaflet.
+Draw, edit, drag, cut, rotate, split, scale, measure, snap, and pin layers with a consistent API.
 
 ![](/img/geoman-docs.png)
 
@@ -22,6 +22,8 @@ Features _not_ available in the free version are marked with a star (⭐).
 
 - [🆓 Install Free Version](/getting-started/free-version)
 - <a href="/docs/leaflet/getting-started/pro-version" className="pro-cta-link">⭐ Install Pro Version</a>
+- [Try the Leaflet demo](https://geoman.io/demo/leaflet)
+- [Compare Pro licenses](https://geoman.io/pricing)
 
 **Configuration and Setup**
 
