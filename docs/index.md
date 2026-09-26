@@ -27,5 +27,5 @@ Features _not_ available in the free version are marked with a star (⭐).
 
 **Configuration and Setup**
 
-- Check out the different [configuration options](/options/index)
-- Explore the many different [editing modes](/modes/index)
+- Check out the different [configuration options](/options)
+- Explore the many different [editing modes](/modes)
