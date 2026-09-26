@@ -2,6 +2,7 @@
   "label": "Modes",
   "position": 3,
   "link": {
-    "type": "generated-index"
+    "type": "generated-index",
+    "description": "Draw, edit, drag, cut, rotate and select Leaflet layers with Geoman modes."
   }
 }

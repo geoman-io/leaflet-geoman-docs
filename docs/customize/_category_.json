@@ -1,8 +1,8 @@
 {
-    "label": "Customization",
-    "position": 10,
-    "link": {
-      "type": "generated-index"
-    }
+  "label": "Customization",
+  "position": 10,
+  "link": {
+    "type": "generated-index",
+    "description": "Customize Leaflet-Geoman controls, translations and map interactions."
   }
-  
+}

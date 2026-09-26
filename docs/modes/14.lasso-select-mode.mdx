@@ -1,15 +1,19 @@
 ---
-title: Lasso Select Mode ⭐
-description: "Select multiple layers at once by drawing a freehand lasso selection area. Pro feature."
+title: Leaflet Lasso Selection ⭐
+description: "Select multiple Leaflet layers with a freehand lasso. Learn intersect versus contain selection, append and subtract modes, events, and GeoJSON export with Geoman Pro."
 ---
 
-## Lasso Select Mode ⭐
+## Select multiple Leaflet layers with a lasso
 
-![Lasso Select Feature](https://assets.geoman.io//assets/lasso-intersect.gif)
+![Lasso Select Feature](https://assets.geoman.io/assets/lasso-intersect.gif)
 
 Lasso Select Mode allows you to select multiple layers on your map by drawing a freehand shape around them. This feature enables quick and intuitive selection of layers for further manipulation or analysis.
 
-You can enable Lasso Select Mode on a map like this:
+Lasso selection is a **Leaflet-Geoman Pro** feature. Install and initialize the [Pro package](/docs/leaflet/getting-started/pro-version) before using these methods. It selects existing layers; it does not cut or merge their geometry.
+
+Use **intersect** to include layers that touch the lasso. Use **contain** to include only layers completely inside it. Start with reset mode for a fresh selection on every draw, then use append or subtract for adjustments.
+
+You can enable Lasso Select Mode on an initialized map like this:
 
 ```js
 // enable Lasso Select Mode
@@ -110,6 +114,19 @@ The following events are available on a map instance:
 | :--------------------------------- | :----- | :---------------------------------------------- | :------------------------ |
 | pm:globallassomodetoggled          | `e`    | Fired when Lasso Select Mode is toggled.        | `enabled`, `map`          |
 | pm:lasso-select                    | `e`    | Fired when a lasso selection is changed.        | `lassoCoords`, `selectionChangedLayers`, `selectedLayers` |
+
+## Export selected features as GeoJSON
+
+Use the selected layers from the event to build a feature collection. Read the selection after drawing, rather than immediately after enabling the tool:
+
+```js
+map.on('pm:lasso-select', ({ selectedLayers }) => {
+  const geojson = L.featureGroup(selectedLayers).toGeoJSON();
+  console.log(geojson);
+});
+```
+
+GeoJSON preserves supported geometries and feature properties; it does not preserve Leaflet styling or map interaction state. A circle's Leaflet radius is not a standard GeoJSON geometry field.
 
 ## Example Usage
 
