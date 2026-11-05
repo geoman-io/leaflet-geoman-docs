@@ -12,6 +12,8 @@ You can enable Drag Mode for all layers on a map like this:
 map.pm.enableGlobalDragMode();
 ```
 
+A layer locked with `layer.pm.setOptions({ draggable: false })` is not made draggable by `enableGlobalDragMode()`, by toggling edit mode, or by drawing another shape. The lock is the option on that layer. Toolbar edit still applies a global `draggable` value only when the layer has not set one.
+
 Or you enable dragging for a specific layer:
 
 ```js
