@@ -8,7 +8,7 @@ description: "Install and set up Leaflet-Geoman Free via npm or CDN. Covers init
 #### Install via npm
 
 ```bash
-npm i @geoman-io/leaflet-geoman-free
+npm i @geoman-io/leaflet-geoman-free@^2.20.6
 ```
 
 #### Install Manually

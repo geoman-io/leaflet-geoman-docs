@@ -31,7 +31,7 @@ See the available options in the table below.
 | width              | `true`   | Shows the width in the tooltip `Rectangle`.                                                                           |
 | coordinates        | `true`   | Shows the coordinates in the tooltip `Marker`, `CircleMarker` and the current dragged marker while drawing / editing. |
 
-The calculated measurements are available on `layer.pm.measurements`.
+The calculated measurements are available on `layer.pm.measurements`. A MultiPolygon area is the sum of its parts. Later parts are not treated as holes. An empty hole is ignored, and a zero-area shape, including a circle with radius `0`, returns a measurement instead of throwing.
 
 If a layer was created outside Geoman, add the configured measurement tooltip
 with `layer.pm.addMeasurementTooltipToLayer(layer)`. The layer must already be

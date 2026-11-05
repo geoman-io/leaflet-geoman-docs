@@ -2,6 +2,24 @@
 title: Leaflet-Geoman Pro ⭐
 description: "Release history and changelog for Leaflet-Geoman Pro version."
 ---
+## v2.20.3 Empty rings and non-finite input
+November 2026
+
+- Auto-trace no longer hangs when a traced ring has two identical consecutive vertices.
+- Union, cut, containment, and measurement no longer throw when a polygon has an empty hole.
+- `L.PM.Utils.getMeasurements()` no longer throws for a zero-area shape, including a circle with radius `0`.
+- Split and cut no longer fail when a multi-line part has fewer than two positions.
+- Global rotate and scale no longer throw when a polyline has no coordinates, or a rectangle ring is shorter than three corners. Later layers are still enabled.
+- `map.pm.setLang(null)` falls back to English. `changeControlOrder` ignores a non-array. `addControls` ignores a position that is not a Leaflet corner.
+- A non-finite angle, scale factor, or coordinate no longer throws during rotate, scale, move, or rectangle finish.
+- MultiPolygon measurement from 2.20.2 is unchanged: the area is the sum of the parts.
+
+## v2.20.2 MultiPolygon measurement
+October 2026
+
+- Calculate MultiPolygon measurement areas as the sum of their parts instead of treating later parts as holes ([#131](https://github.com/geoman-io/leaflet-geoman-pro/issues/131)).
+- Replace `.nvmrc` with `mise.toml` and pin Node.js 24.21.0.
+
 ## v2.20.1 Bundle Fixes
 September 2026
 

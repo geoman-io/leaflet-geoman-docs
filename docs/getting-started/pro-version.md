@@ -20,7 +20,7 @@ _Don't have a license key yet? <a href="https://geoman.io/pricing" className="pr
 #### Install via npm
 
 ```bash
-npm install @geoman-io/leaflet-geoman-pro
+npm install @geoman-io/leaflet-geoman-pro@^2.20.3
 ```
 
 #### Import in your project after leaflet

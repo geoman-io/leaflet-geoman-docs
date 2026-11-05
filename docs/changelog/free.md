@@ -3,18 +3,43 @@ title: Leaflet-Geoman Free
 description: "Release history and changelog for Leaflet-Geoman Free version."
 ---
 
-## [2.20.2] - 2026-09-21
-
-### Changed
-
-- Migrate the source, tests, demos, and build tooling to strict TypeScript while preserving the existing JavaScript package API
-- Add package-consumer and Leaflet class-contract type tests
+## [2.20.6] - 2026-11-04
 
 ### Fixed
 
-- Honor per-layer rotation permissions for layers added while Global Rotation Mode is active
-- Safely destroy toolbar buttons without calling a nonexistent update hook
-- Port the TypeScript migration follow-up fixes from Pro
+- A marker, circle marker, or image overlay locked with `pm.setOptions({ draggable: false })` stays locked after drawing another shape, toggling edit mode, or entering drag mode. Toolbar edit still applies global options the layer has not set itself ([#1113](https://github.com/geoman-io/leaflet-geoman/issues/1113), [#1714](https://github.com/geoman-io/leaflet-geoman/pull/1714)).
+
+## [2.20.5] - 2026-11-03
+
+### Fixed
+
+- Finding a vertex for cutting and snapping no longer skips latitude 0.
+- `map.pm.setLang(null)` and other non-string language codes fall back to English instead of throwing.
+- Draw, edit, cut, and rotate no longer throw on an empty ring, an empty hole, a non-finite circle radius or rectangle angle, a layer that is not on the map, or a non-array `ignoreShapes`. Global edit and rotate continue with the remaining layers.
+- `changeControlOrder(null)`, a non-string `className`, and a non-Leaflet marker icon no longer throw while the toolbar is being built.
+
+## [2.20.4] - 2026-10-21
+
+### Changed
+
+- Development dependency updates only. The public API is unchanged.
+
+## [2.20.3] - 2026-10-20
+
+### Added
+
+- Add `map.pm.finishDraw()` to finish a valid active drawing programmatically ([#1100](https://github.com/geoman-io/leaflet-geoman/issues/1100)).
+
+### Changed
+
+- Replace `.nvmrc` with `mise.toml` and pin Node.js 24.21.0.
+
+## [2.20.2] - 2026-09-21
+
+### Fixed
+
+- Allow text layers to be cleared with `setText('')`.
+- Normalize compiler-contract fixture paths on Windows.
 
 ## [2.20.1] - 2026-09-11
 
