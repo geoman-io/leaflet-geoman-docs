@@ -1,9 +1,17 @@
 ---
 sidebar_position: 1
 title: "Free Version"
-description: "Install and set up Leaflet-Geoman Free via npm or CDN. Covers initialization, layer exclusion with pmIgnore, and Opt-In mode."
+description: "Install Leaflet-Geoman Free via npm or CDN, check supported Leaflet versions (1.9.4 tested) and initialize it. Covers pmIgnore and Opt-In mode."
 ---
 ## Installation
+
+#### Supported Leaflet versions
+
+Leaflet-Geoman Free 2.20 works with Leaflet 1.2 and later in the 1.x line (its peer dependency is `leaflet@^1.2.0`). Our guides and examples are tested with **Leaflet 1.9.4**, the latest stable Leaflet release. Leaflet 2.0 is still in beta and falls outside that peer range, so stay on Leaflet 1.9.x for production. See the [changelog](../changelog/free.md) for Geoman releases.
+
+```bash
+npm i leaflet@^1.9.4 @geoman-io/leaflet-geoman-free@^2.20.6
+```
 
 #### Install via npm
 
